@@ -1,3 +1,4 @@
+import streamlit as st
 
-import steamlit as st
-st.title ("Hello World")
+age = st.slider('How old are you?', 0, 130, 25)
+st.write("I'm ", age, 'years old')
