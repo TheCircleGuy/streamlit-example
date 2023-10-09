@@ -17,6 +17,18 @@ with st.sidebar:
         'Select a range of licenses to be sold',
         0, 1000, (60, 150), key="a9")
 
+# Create a table to display the listed variables
+table_data = {
+    'Variable': ['Monthly Cost', 'Number of Projects per Manager', 'Manager Salary',
+                 'Number Of Projects per SERVER', 'Server Cost', 'Commission Percentage',
+                 'Average Revenue Of License', 'Average Licenses per Client', 'Price to be sold',
+                 'Range of Licenses'],
+    'Value': [MonthlyCost, ProjPerManager, ManagerSalary, ProjPerServer, ServerCost,
+              Commision, avgRevLicense, avgLicensePerClient, price, f"{licenses[0]} to {licenses[1]}"]
+}
+
+st.table(table_data)
+
 # Calculate the revenue, fixed cost, variable cost, and total cost for each quantity
 quantities = list(range(licenses[0], licenses[1] + 1))
 
