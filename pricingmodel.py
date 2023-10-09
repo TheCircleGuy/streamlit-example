@@ -1,18 +1,54 @@
 import streamlit as st
 import pandas as pd
-from datetime import time
 import numpy as np
 
-st.title('PRICING MODEL')
+# Input variables
+with st.sidebar:
+    MonthlyCost = st.number_input('Insert Monthly Cost', value=13000)
+    ProjPerManager = st.number_input('Insert Number of Projects per Manager', value=4, key="a1")
+    ManagerSalary = st.number_input('Insert Manager Salary', value=500, key="a2")
+    ProjPerServer = st.number_input('Insert Number Of Projects per SERVER', value=4, key="a3")
+    ServerCost = st.number_input('Insert Server Cost', value=197, key="a4")
+    Commision = st.number_input('Insert Commission Percentage', value=0.001, key="a5")
+    avgRevLicense = st.number_input('Insert Average Revenue Of License', value=1000, key="a6")
+    avgLicensePerClient = st.number_input('Insert Average Licenses per Client', value=10, key="a7")
+    price = st.number_input('Insert price to be sold', value=2000, key="a8")
+    licenses = st.slider(
+        'Select a range of licenses to be sold',
+        0, 1000, (60, 150), key="a9")
 
-chart_data = pd.DataFrame(
-   {
-       "col1": list(range(20)) * 3,
-       "col2": np.random.randn(60),
-       "col3": ["A"] * 20 + ["B"] * 20 + ["C"] * 20,
-   }
-)
+# Calculate the revenue, fixed cost, variable cost, and total cost for each quantity
+quantities = list(range(licenses[0], licenses[1] + 1))
 
-st.bar_chart(chart_data, x="col1", y="col2", color="col3")
+revenue = [price * q + Commision * avgRevLicense * q for q in quantities]
 
-x=0
+fixedCost = [
+    MonthlyCost * 12 + ManagerSalary * ProjPerManager + ServerCost * (ProjPerServer / licenses[1]) * q
+    for q in quantities
+]
+
+TotalManagerSalary = [
+    ManagerSalary * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ManagerSalary * (q + 1)
+    for q in quantities
+]
+
+TotalServerCost = [
+    ServerCost * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ServerCost * (q + 1)
+    for q in quantities
+]
+
+VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost)
+
+TotalCost = np.array(fixedCost) + VariableCost
+
+# Create a DataFrame to hold the data
+data = pd.DataFrame({
+    'Quantity': quantities,
+    'Fixed Cost': fixedCost,
+    # 'Variable Cost': VariableCost,
+    'Revenue': revenue,
+    'Total Cost': TotalCost
+})
+
+# Create a line chart
+st.line_chart(data.set_index('Quantity'))
