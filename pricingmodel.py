@@ -14,3 +14,5 @@ chart_data = pd.DataFrame(
 )
 
 st.bar_chart(chart_data, x="col1", y="col2", color="col3")
+
+x=0
