@@ -44,7 +44,7 @@ TotalManagerSalary = [
     for q in quantities
 ]
 
-print(TotalManagerSalary)
+st.write(pd.Dataframe(TotalManagerSalary))
 
 TotalServerCost = [
     ServerCost * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ServerCost * (q + 1)
