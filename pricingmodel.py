@@ -53,11 +53,14 @@ VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost)
 
 TotalCost = np.array(fixedCost) + VariableCost
 
+Profit = np.array(revenue) - np.array(TotalCost)
+
 # Create a DataFrame to hold the data
 data = pd.DataFrame({
     'Quantity': quantities,
     'Fixed Cost': fixedCost,
     # 'Variable Cost': VariableCost,
+    'Profit': Profit,
     'Revenue': revenue,
     'Total Cost': TotalCost
 })
