@@ -44,6 +44,8 @@ TotalManagerSalary = [
     for q in quantities
 ]
 
+print(TotalManagerSalary)
+
 TotalServerCost = [
     ServerCost * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ServerCost * (q + 1)
     for q in quantities
