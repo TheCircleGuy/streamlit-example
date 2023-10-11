@@ -12,10 +12,22 @@ Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingc
 
 # Sidebar
 with st.sidebar:
-    # ... Your existing sidebar code ...
+    st.title("Sidebar")
+    MonthlyCost = st.number_input('Insert Monthly Cost', value=13000)
+    ProjPerManager = st.number_input('Insert Number of Projects per Manager', value=4, key="a1")
+    ManagerSalary = st.number_input('Insert Manager Salary', value=500, key="a2")
+    ProjPerServer = st.number_input('Insert Number Of Projects per SERVER', value=4, key="a3")
+    ServerCost = st.number_input('Insert Server Cost', value=197, key="a4")
+    Commision = st.number_input('Insert Commission Percentage', value=0.001, key="a5")
+    avgRevLicense = st.number_input('Insert Average Revenue Of License', value=1000, key="a6")
+    avgLicensePerClient = st.number_input('Insert Average Licenses per Client', value=10, key="a7")
+    price = st.number_input('Insert price to be sold', value=2000, key="a8")
+    licenses = st.slider(
+        'Select a range of licenses to be sold',
+        0, 1000, (60, 150), key="a9")
 
 # Main content
-st.title("Main Content")
+    st.title("Main Content")
 
 # Calculate TotalManagerSalary, TotalServerCost, and VariableCost
 quantities = range(0, 1001)
