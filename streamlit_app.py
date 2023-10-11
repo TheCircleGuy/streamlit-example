@@ -1,19 +1,11 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
 import streamlit as st
+import pandas as pd
 import numpy as np
-"""
-# Pricing Model
 
-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool
-"""
-
-# Sidebar
+# Input variables
 with st.sidebar:
-    st.title("Sidebar")
-    MonthlyCost = st.number_input('Insert Monthly Cost', value=13000)
+    Profit = st.number_input('Insert desired profit', value=5000, key=None)
+    MonthlyCost = st.number_input('Insert Monthly Cost', value=13000, key=None)
     ProjPerManager = st.number_input('Insert Number of Projects per Manager', value=4, key="a1")
     ManagerSalary = st.number_input('Insert Manager Salary', value=500, key="a2")
     ProjPerServer = st.number_input('Insert Number Of Projects per SERVER', value=4, key="a3")
@@ -26,33 +18,53 @@ with st.sidebar:
         'Select a range of licenses to be sold',
         0, 1000, (60, 150), key="a9")
 
-# Main content
-    st.title("Main Content")
+# Create a table to display the listed variables
+table_data = {
+    'Variable': ['Monthly Cost', 'Number of Projects per Manager', 'Manager Salary',
+                 'Number Of Projects per SERVER', 'Server Cost', 'Commission Percentage',
+                 'Average Revenue Of License', 'Average Licenses per Client', 'Price to be sold',
+                 'Range of Licenses'],
+    'Value': [MonthlyCost, ProjPerManager, ManagerSalary, ProjPerServer, ServerCost,
+              Commision, avgRevLicense, avgLicensePerClient, price, f"{licenses[0]} to {licenses[1]}"]
+}
 
-# Calculate TotalManagerSalary, TotalServerCost, and VariableCost
-quantities = range(0, 1001)
+st.table(table_data)
+
+# Calculate the revenue, fixed cost, variable cost, and total cost for each quantity
+quantities = list(range(licenses[0], licenses[1] + 1))
+
+revenue = [price * q + Commision * avgRevLicense * q for q in quantities]
+
+fixedCost = [
+    MonthlyCost * 12 * q
+    for q in quantities
+]
+
 TotalManagerSalary = [
     ManagerSalary * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ManagerSalary * (q + 1)
     for q in quantities
 ]
+
 TotalServerCost = [
     ServerCost * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ServerCost * (q + 1)
     for q in quantities
 ]
-VariableCost = [TotalServerCost[i] + TotalManagerSalary[i] for i in range(len(quantities))]
 
-# Calculate Fixedcost and TotalCost
-Fixedcost = MonthlyCost * 12
-TotalCost = [Fixedcost + VariableCost[i] for i in range(len(quantities))]
+VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost)
+
+TotalCost = np.array(fixedCost) + VariableCost
+
+# Calculate Target Price
+TargetPrice = TotalCost + Profit
+
+# Create a DataFrame to hold the data
+data = pd.DataFrame({
+    'Quantity': quantities,
+    'Fixed Cost': fixedCost,
+    'Total Cost': TotalCost,
+    'Target Price': TargetPrice,
+    'Revenue': revenue
+})
 
 # Create a line chart
-st.line_chart(
-    np.column_stack((quantities, Fixedcost, TotalCost, VariableCost)),
-    use_container_width=True,
-)
-st.write("Line Chart Explanation:")
-st.write("X-axis: Number of Licenses")
-st.write("Y-axis: Cost (Price)")
-st.write("Blue Line: Fixed Cost")
-st.write("Orange Line: Total Cost")
-st.write("Green Line: Variable Cost")
+st.line_chart(data.set_index('Quantity'))
