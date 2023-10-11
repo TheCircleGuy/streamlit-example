@@ -70,4 +70,4 @@ data = pd.DataFrame({
 st.line_chart(data.set_index('Quantity'))
 
 # Display a table of revenue
-st.table(data[['Quantity', 'Revenue']])
+st.table(data[['Quantity', 'Revenue','TotalCost']])
