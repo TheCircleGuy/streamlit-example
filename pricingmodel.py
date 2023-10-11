@@ -35,7 +35,7 @@ quantities = list(range(licenses[0], licenses[1] + 1))
 revenue = [price * q + Commision * avgRevLicense * q for q in quantities]
 
 fixedCost = [
-    MonthlyCost * 12 * q
+    MonthlyCost * 12 + ManagerSalary * ProjPerManager + ServerCost * (ProjPerServer / licenses[1]) * q
     for q in quantities
 ]
 
@@ -43,7 +43,6 @@ TotalManagerSalary = [
     ManagerSalary * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ManagerSalary * (q + 1)
     for q in quantities
 ]
-
 
 TotalServerCost = [
     ServerCost * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ServerCost * (q + 1)
@@ -54,14 +53,11 @@ VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost)
 
 TotalCost = np.array(fixedCost) + VariableCost
 
-Profit = np.array(revenue) - np.array(TotalCost)
-
 # Create a DataFrame to hold the data
 data = pd.DataFrame({
     'Quantity': quantities,
     'Fixed Cost': fixedCost,
     # 'Variable Cost': VariableCost,
-    'Profit': Profit,
     'Revenue': revenue,
     'Total Cost': TotalCost
 })
