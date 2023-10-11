@@ -35,9 +35,7 @@ quantities = list(range(licenses[0], licenses[1] + 1))
 
 revenue = [price * q for q in quantities]
 
-fixedCost = [
-    MonthlyCost * 12
-]
+fixedCost = [MonthlyCost * 12] * len(quantities)
 
 TotalManagerSalary = [
     ManagerSalary * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ManagerSalary * (q + 1)
