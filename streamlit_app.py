@@ -66,5 +66,8 @@ data = pd.DataFrame({
     'Revenue': revenue
 })
 
-# Create a line chart
+# Display the line chart
 st.line_chart(data.set_index('Quantity'))
+
+# Display a table of revenue
+st.table(data[['Quantity', 'Revenue']])
