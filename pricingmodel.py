@@ -35,7 +35,7 @@ quantities = list(range(licenses[0], licenses[1] + 1))
 revenue = [price * q + Commision * avgRevLicense * q for q in quantities]
 
 fixedCost = [
-    MonthlyCost * 12 + ManagerSalary * ProjPerManager + ServerCost * (ProjPerServer / licenses[1]) * q
+    MonthlyCost * 12  * q
     for q in quantities
 ]
 
