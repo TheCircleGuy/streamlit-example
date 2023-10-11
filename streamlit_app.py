@@ -36,8 +36,7 @@ quantities = list(range(licenses[0], licenses[1] + 1))
 revenue = [price * q for q in quantities]
 
 fixedCost = [
-    MonthlyCost * q
-    for q in quantities
+    MonthlyCost * 12
 ]
 
 TotalManagerSalary = [
