@@ -33,7 +33,7 @@ st.table(table_data)
 # Calculate the revenue, fixed cost, variable cost, and total cost for each quantity
 quantities = list(range(licenses[0], licenses[1] + 1))
 
-revenue = [price * q + Commision * avgRevLicense * q for q in quantities]
+revenue = [price * q for q in quantities]
 
 fixedCost = [
     MonthlyCost * 12 * q
