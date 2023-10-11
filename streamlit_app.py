@@ -3,36 +3,44 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-
+import numpy as np
 """
-# Welcome to DIAS
+# Pricing Model
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
+Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool-Somethingcool
 """
 
+# Sidebar
+with st.sidebar:
+    # ... Your existing sidebar code ...
 
-with st.echo(code_location='below'):
-    total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
+# Main content
+st.title("Main Content")
 
-    Point = namedtuple('Point', 'x y')
-    data = []
+# Calculate TotalManagerSalary, TotalServerCost, and VariableCost
+quantities = range(0, 1001)
+TotalManagerSalary = [
+    ManagerSalary * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ManagerSalary * (q + 1)
+    for q in quantities
+]
+TotalServerCost = [
+    ServerCost * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ServerCost * (q + 1)
+    for q in quantities
+]
+VariableCost = [TotalServerCost[i] + TotalManagerSalary[i] for i in range(len(quantities))]
 
-    points_per_turn = total_points / num_turns
+# Calculate Fixedcost and TotalCost
+Fixedcost = MonthlyCost * 12
+TotalCost = [Fixedcost + VariableCost[i] for i in range(len(quantities))]
 
-    for curr_point_num in range(total_points):
-        curr_turn, i = divmod(curr_point_num, points_per_turn)
-        angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
-        radius = curr_point_num / total_points
-        x = radius * math.cos(angle)
-        y = radius * math.sin(angle)
-        data.append(Point(x, y))
-
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
-        .mark_circle(color='#0068c9', opacity=0.5)
-        .encode(x='x:Q', y='y:Q'))
+# Create a line chart
+st.line_chart(
+    np.column_stack((quantities, Fixedcost, TotalCost, VariableCost)),
+    use_container_width=True,
+)
+st.write("Line Chart Explanation:")
+st.write("X-axis: Number of Licenses")
+st.write("Y-axis: Cost (Price)")
+st.write("Blue Line: Fixed Cost")
+st.write("Orange Line: Total Cost")
+st.write("Green Line: Variable Cost")
