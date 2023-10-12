@@ -203,6 +203,24 @@ st.line_chart(data.set_index('Quantity')[[
     
     ]])
 
+for col1 in data.columns[1:]:
+    for col2 in data.columns[1:]:
+        if col1 != col2:
+            x1 = data[col1].values
+            x2 = data[col2].values
+            quantity = data['Quantity'].values
+
+            intersection_indices = np.where(x1 == x2)
+            if len(intersection_indices[0]) > 0:
+                intersection_x = quantity[intersection_indices[0]]
+                intersection_y = x1[intersection_indices[0]]
+
+                plt.scatter(intersection_x, intersection_y, label=f"Intersection ({col1}, {col2})", marker='o')
+
+# Display the chart
+st.pyplot(plt)
+
+
 data = pd.DataFrame({
     'Quantity': Sales,
     'Fixed Cost': fixedCost,
