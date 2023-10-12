@@ -2,73 +2,33 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.balloons()
-
 # Input variables
 with st.sidebar:
-    st.title('Inputs')
+    Profit = st.number_input('Insert Desired Profit Constant', value=10000, key="a0")
 
-    st.header('Desired Profit Constant')
-    
-    Profit = st.number_input('', value=10000, key="a0")
+    MonthlyCost = st.number_input('Insert Monthly Cost', value=31530, key="a1")
 
-    st.divider()
-    
-    st.header('Cost Input')
+    ProjPerManager = st.number_input('Insert Number of Projects per Manager', value=4, key="a2")
 
-    st.subheader('Monthly Cost')
+    ManagerSalary = st.number_input('Insert Manager Salary', value=681, key="a3")
 
-    MonthlyCost = st.number_input('', value=31530, key="a1")
+    ProjPerServer = st.number_input('Insert Number Of Projects per SERVER', value=4, key="a4")
 
-    st.subheader('Projects per Manager')
+    ServerCost = st.number_input('Insert Server Cost', value=197, key="a5")
 
-    ProjPerManager = st.number_input('', value=4, key="a2")
+    Commision = st.number_input('Insert Commission Percentage', value=0.01, key="a6")
 
-    st.subheader('Manager Salary')
+    avgTransValue = st.number_input('Insert Average Transaction Value ', value=2, key="a7")
 
-    ManagerSalary = st.number_input('', value=681, key="a3")
+    avgTransPerStore = st.number_input('Insert Average Transactions Per Store', value=533, key="a11")
 
-    st.subheader('Projects per Server')
+    avgLicensePerClient = st.number_input('Medium Size Clients (Number of Stores per sales)', value=20, key="a8")
 
-    ProjPerServer = st.number_input('', value=4, key="a4")
-
-    st.subheader('Server Cost')
-
-    ServerCost = st.number_input('', value=197, key="a5")
-
-    st.divider()
-
-    st.header('Inflow')
-
-    st.subheader('Commision perentage')
-
-    Commision = st.number_input('', value=0.01, key="a6")
-
-    st.subheader('Average Transaction Value')
-
-    avgTransValue = st.number_input('', value=2, key="a7")
-
-    st.subheader('Average Transactions Per Store')
-
-    avgTransPerStore = st.number_input('', value=533, key="a11")
-
-    st.subheader('Medium Size Clients')
-
-    avgLicensePerClient = st.number_input('', value=20, key="a8")
-
-    st.subheader('price to be sold')
-
-    price = st.number_input('', value=2000, key="a9")
-
-    st.subheader('Sales Volume')
+    price = st.number_input('Insert price to be sold', value=2000, key="a9")
 
     sales = st.slider(
-        '',
+        'Sales Volume',
         0, 200, (1, 30), key="a10")
-
-
-st.markdown("<h1 style='text-align: center; color: #0d043b;'>Pricing Model</h1>", unsafe_allow_html=True)
-st.subheader('Target Medium Size Businesses: 10 -30 stores')
 
 # Create a table to display the listed variables
 table_data = {
@@ -243,8 +203,22 @@ st.line_chart(data.set_index('Quantity')[[
     
     ]])
 
+for col1 in data.columns[1:]:
+    for col2 in data.columns[1:]:
+        if col1 != col2:
+            x1 = data[col1].values
+            x2 = data[col2].values
+            quantity = data['Quantity'].values
 
+            intersection_indices = np.where(x1 == x2)
+            if len(intersection_indices[0]) > 0:
+                intersection_x = quantity[intersection_indices[0]]
+                intersection_y = x1[intersection_indices[0]]
 
+                plt.scatter(intersection_x, intersection_y, label=f"Intersection ({col1}, {col2})", marker='o')
+
+# Display the chart
+st.pyplot(plt)
 
 
 data = pd.DataFrame({
