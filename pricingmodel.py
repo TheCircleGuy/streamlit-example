@@ -204,17 +204,8 @@ st.line_chart(data.set_index('Quantity')[[
     
     ]])
 
-# Find and plot intersection points
-for col1 in data.columns[1:]:
-    for col2 in data.columns[1:]:
-        if col1 != col2:
-            intersection_indices = np.where(data[col1] == data[col2])
-            if len(intersection_indices[0]) > 0:
-                intersection_points = data.iloc[intersection_indices]
-                st.write(f"Intersection points between {col1} and {col2}:")
-                st.dataframe(intersection_points)
 
-st.pyplot(plt)  # Display the chart
+
 
 
 data = pd.DataFrame({
