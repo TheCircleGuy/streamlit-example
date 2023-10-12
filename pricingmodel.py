@@ -6,31 +6,69 @@ st.balloons()
 
 # Input variables
 with st.sidebar:
-    Profit = st.number_input('Insert Desired Profit Constant', value=10000, key="a0")
+    st.title('Inputs')
 
-    MonthlyCost = st.number_input('Insert Monthly Cost', value=31530, key="a1")
+    st.header('Desired Profit Constant')
+    
+    Profit = st.number_input('', value=10000, key="a0")
+
+    st.divider()
+    
+    st.header('Cost Input')
+
+    st.subheader('Monthly Cost')
+
+    MonthlyCost = st.number_input('', value=31530, key="a1")
+
+    st.subheader('Projects per Manager')
 
     ProjPerManager = st.number_input('Insert Number of Projects per Manager', value=4, key="a2")
 
-    ManagerSalary = st.number_input('Insert Manager Salary', value=681, key="a3")
+    st.subheader('Manager Salary')
+
+    ManagerSalary = st.number_input('', value=681, key="a3")
+
+    st.subheader('Projects per Server')
 
     ProjPerServer = st.number_input('Insert Number Of Projects per SERVER', value=4, key="a4")
 
-    ServerCost = st.number_input('Insert Server Cost', value=197, key="a5")
+    st.subheader('Server Cost')
 
-    Commision = st.number_input('Insert Commission Percentage', value=0.01, key="a6")
+    ServerCost = st.number_input('', value=197, key="a5")
 
-    avgTransValue = st.number_input('Insert Average Transaction Value ', value=2, key="a7")
+    st.divider()
 
-    avgTransPerStore = st.number_input('Insert Average Transactions Per Store', value=533, key="a11")
+    st.Header('Inflow')
+
+    st.subheader('Commision perentage')
+
+    Commision = st.number_input('', value=0.01, key="a6")
+
+    st.subheader('Average Transaction Value')
+
+    avgTransValue = st.number_input('', value=2, key="a7")
+
+    st.subheader('Average Transactions Per Store')
+
+    avgTransPerStore = st.number_input('', value=533, key="a11")
+
+    st.subheader('Medium Size Clients')
 
     avgLicensePerClient = st.number_input('Medium Size Clients (Number of Stores per sales)', value=20, key="a8")
 
-    price = st.number_input('Insert price to be sold', value=2000, key="a9")
+    st.subheader('price to be sold')
+
+    price = st.number_input('', value=2000, key="a9")
+
+    st.subheader('Sales Volume')
 
     sales = st.slider(
         'Sales Volume',
         0, 200, (1, 30), key="a10")
+
+
+st.header('PRICING MODEL :blue[cool]')
+st.subheader('Target Medium Size Businesses: 10 -30 stores')
 
 # Create a table to display the listed variables
 table_data = {
