@@ -38,7 +38,7 @@ with st.sidebar:
 
     st.divider()
 
-    st.Header('Inflow')
+    st.header('Inflow')
 
     st.subheader('Commision perentage')
 
