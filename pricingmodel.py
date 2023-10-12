@@ -59,22 +59,22 @@ ExpectedProfits = [Profit * 1 for q in Sales]
 TotalManagerSalary = []
 for q in Sales:
     if q < 5:
-        TotalManagerSalary.append(ManagerSalary)
+        TotalManagerSalary.append(ManagerSalary*12)
     else:
         if (q % ProjPerManager) > 0:
-            TotalManagerSalary.append((q // ProjPerManager + 1) * ManagerSalary)
+            TotalManagerSalary.append((q // ProjPerManager + 1) * ManagerSalary*12)
         else:
-            TotalManagerSalary.append((q // ProjPerManager) * ManagerSalary)
+            TotalManagerSalary.append((q // ProjPerManager) * ManagerSalary*12)
 
 TotalServerCost = []
 for q in Sales:
     if q < 5:
-        TotalServerCost.append(ServerCost)
+        TotalServerCost.append(ServerCost*12)
     else:
         if (q % ProjPerManager) > 0:
-            TotalServerCost.append((q // ProjPerServer + 1) * ServerCost)
+            TotalServerCost.append((q // ProjPerServer + 1) * ServerCost*12)
         else:
-            TotalServerCost.append((q // ProjPerServer) * ServerCost)  
+            TotalServerCost.append((q // ProjPerServer) * ServerCost*12)  
             
 VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost)
 
