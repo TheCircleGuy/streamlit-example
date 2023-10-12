@@ -38,7 +38,7 @@ with st.sidebar:
 
 
 st.markdown("<h1 style='text-align: center; color: #080b54;'>Pricing Model</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h3>", unsafe_allow_html=True)
 
 # Create a table to display the listed variables
 table_data = {
@@ -149,6 +149,16 @@ st.text("")
 with st.spinner("Wait A Sec, Dan!"):
     if BreakEvenSales is not None:
         st.write("When Sales =", BreakEvenSales, "; Revenue =", revenue[q], "; Total Cost =", TotalCost[q])
+# Target Sales, Target Revenue, Total Cost, Profit, Nearest  competitor, Diff between competitor [Speedpos] )
+        col1, col2, col3 = st.columns(4)
+            col1.metric("Target Sales", value = BreakEvenSales )
+            col2.metric("Target Revenue", value = revenue[q] )
+            col3.metric("Total Cost", value = TotalCost[q] )
+            col3.metric("Profit", value =  revenue[q] - TotalCost[q] )
+         st.divider()
+        col1, col2, col3 = st.columns(2)
+            col1.metric("Nearest  competitor price", value = 2000)
+            col2.metric("Diff between competitor", value = 0 )
     else:
         # Find the 5 most optimal price and sales pairs to break even
         st.write("No exact Break-Even Sales found. Finding 5 most optimal price and sales pairs to break even...")
