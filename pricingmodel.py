@@ -22,7 +22,7 @@ with st.sidebar:
 
     st.subheader('Projects per Manager')
 
-    ProjPerManager = st.number_input('Insert Number of Projects per Manager', value=4, key="a2")
+    ProjPerManager = st.number_input('', value=4, key="a2")
 
     st.subheader('Manager Salary')
 
@@ -30,7 +30,7 @@ with st.sidebar:
 
     st.subheader('Projects per Server')
 
-    ProjPerServer = st.number_input('Insert Number Of Projects per SERVER', value=4, key="a4")
+    ProjPerServer = st.number_input('', value=4, key="a4")
 
     st.subheader('Server Cost')
 
@@ -54,7 +54,7 @@ with st.sidebar:
 
     st.subheader('Medium Size Clients')
 
-    avgLicensePerClient = st.number_input('Medium Size Clients (Number of Stores per sales)', value=20, key="a8")
+    avgLicensePerClient = st.number_input('', value=20, key="a8")
 
     st.subheader('price to be sold')
 
@@ -63,11 +63,11 @@ with st.sidebar:
     st.subheader('Sales Volume')
 
     sales = st.slider(
-        'Sales Volume',
+        '',
         0, 200, (1, 30), key="a10")
 
 
-st.header('PRICING MODEL :blue[cool]')
+st.markdown("<h1 style='text-align: center; color: blue;'>Pricing Model</h1>", unsafe_allow_html=True)
 st.subheader('Target Medium Size Businesses: 10 -30 stores')
 
 # Create a table to display the listed variables
