@@ -215,16 +215,17 @@ data = pd.DataFrame({
 # Create a line chart for Fixed Cost, Total Cost, Target Cost, and Revenue
 st.markdown('<div style="text-align: center;">MODEL CALCULATION</div>', unsafe_allow_html=True)
 st.text("")
-st.line_chart(data.set_index('Quantity')[[
-    'Fixed Cost', 
-    'Total Cost', 
-    'Target Cost',
-    'Revenue',
-    # 'ServerCost',
-    # 'Variable Cost',
-    # 'Estimated Profit'
-    
-    ]],
+st.line_chart(
+    data.set_index('Quantity')
+    [[
+        'Fixed Cost', 
+        'Total Cost', 
+        'Target Cost',
+        'Revenue',
+        # 'ServerCost',
+        # 'Variable Cost',
+        # 'Estimated Profit'
+    ]],*,
      x = "Sales", y = "Price")
 
 
