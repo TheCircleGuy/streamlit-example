@@ -150,55 +150,21 @@ with st.spinner("Wait A Sec, Dan!"):
     if BreakEvenSales is not None:
         st.write("When Sales =", BreakEvenSales, "; Revenue =", revenue[q], "; Total Cost =", TotalCost[q])
 # Target Sales, Target Revenue, Total Cost, Profit, Nearest  competitor, Diff between competitor [Speedpos] )
-        # col1, col2, col3 = st.columns(4)
-        #     col1.metric("Target Sales", value = BreakEvenSales )
-        #     col2.metric("Target Revenue", value = revenue[q] )
-        #     col3.metric("Total Cost", value = TotalCost[q] )
-        #     col3.metric("Profit", value =  revenue[q] - TotalCost[q] )
-        #  st.divider()
-        # col1, col2, col3 = st.columns(2)
-        #     col1.metric("Nearest  competitor price", value = 2000)
-        #     col2.metric("Diff between competitor", value = 0 )
+        col1, col2, col3, col4= st.columns(4)
+        col1.metric("Target Sales", value = BreakEvenSales )
+        col2.metric("Target Revenue", value = revenue[q] )
+        col3.metric("Total Cost", value = TotalCost[q] )
+        col4.metric("Profit", value =  revenue[q] - TotalCost[q] )
+        st.divider()
+        col1, col2 = st.columns(2)
+        col1.metric("Nearest  competitor price", value = 2000)
+        col2.metric("Diff between competitor", value = 0 )
 
-        st.markdown(
-            """
-            <style>
-                div[data-testid="column"]:nth-of-type(1)
-                {
-                    border:1px solid red;
-                } 
-        
-                div[data-testid="column"]:nth-of-type(2)
-                {
-                    border:1px solid blue;
-                    text-align: end;
-                } 
-            </style>
-            """,unsafe_allow_html=True
-        )
 
-        col1, col2, col3 = st.columns(3)
-        
-        with col1:
-            """
-            ## Column 1 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore 
-            magna aliqua. Volutpat sed cras ornare arcu dui vivamus.
-            """
-        with col2:
-            """
-            ## Column 2
-            Stuff aligned to the right
-            """
-            st.button("➡️")
-        with col3:
-            """
-            ## Column 3
-            This column was untouched by our CSS 
-            """
-            st.button("🐈")
-
+        # col1, col2, col3 = st.columns(3)
+        # col1.metric("Target Sales", "70 °F", "1.2 °F")
+        # col2.metric("Wind", "9 mph", "-8%")
+        # col3.metric("Humidity", "86%", "4%")
     
     else:
         # Find the 5 most optimal price and sales pairs to break even
