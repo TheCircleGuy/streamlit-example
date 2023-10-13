@@ -160,10 +160,10 @@ with st.spinner("Wait A Sec, Dan!"):
         #     col1.metric("Nearest  competitor price", value = 2000)
         #     col2.metric("Diff between competitor", value = 0 )
 
-col1, col2, col3 = st.columns(3)
-col1.metric("Temperature", "70 °F", "1.2 °F")
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Temperature", "70 °F", "1.2 °F")
+        col2.metric("Wind", "9 mph", "-8%")
+        col3.metric("Humidity", "86%", "4%")
 
 
     
