@@ -189,11 +189,6 @@ st.text("")
 st.text("")
 st.text("")
 
-st.write("Note that: _Total_Cost = _Fixed_Cost + _Variable_Cost. And Variable Cost is small comparing to the Revenue. Thus you will see the _Total_Cost and _Fixed_Cost almost coincide. Zoom to see clearly 2 lines ")
-st.text("")
-st.text("")
-st.text("")
-st.text("")
 
 # Create a DataFrame to hold the data
 data = pd.DataFrame({
