@@ -227,7 +227,7 @@ st.line_chart( data=
         # 'Variable Cost',
         # 'Estimated Profit'
     ]]
-        , x="Revenue", y="Quantity"
+        , x="Quantity", y="Total Cost"
      )
 
 
