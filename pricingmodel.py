@@ -4,6 +4,7 @@ import numpy as np
 
 # Input variables
 with st.sidebar:
+    st.image('https://two.vn/sites/all/themes/vermont/img/logo.png')
     st.title('Inputs')
     st.header('Desired Profit Constant')
     Profit = st.number_input('', value=10000, key="a0")
