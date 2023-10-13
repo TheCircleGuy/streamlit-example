@@ -160,21 +160,44 @@ with st.spinner("Wait A Sec, Dan!"):
         #     col1.metric("Nearest  competitor price", value = 2000)
         #     col2.metric("Diff between competitor", value = 0 )
 
-        col1, col2, col3, col4, col5, col6 = st.columns(6)
-        col1.metric("Temperature", "70 °F", "1.2 °F")
-        col2.metric("Wind", "9 mph", "-8%")
-        col3.metric("Humidity", "86%", "4%")
-        col4.metric("Humidity", "86%", "4%")
-        col5.metric("Humidity", "86%", "4%")
-        col6.metric("Humidity", "86%", "4%")
+        st.markdown(
+            """
+            <style>
+                div[data-testid="column"]:nth-of-type(1)
+                {
+                    border:1px solid red;
+                } 
+        
+                div[data-testid="column"]:nth-of-type(2)
+                {
+                    border:1px solid blue;
+                    text-align: end;
+                } 
+            </style>
+            """,unsafe_allow_html=True
+        )
 
-        col1, col2, col3, col4, col5, col6 = st.columns(6)
-        col1.metric("Temperature", "70 °F", "1.2 °F")
-        col2.metric("Wind", "9 mph", "-8%")
-        col3.metric("Humidity", "86%", "4%")
-        col4.metric("Humidity", "86%", "4%")
-        col5.metric("Humidity", "86%", "4%")
-        col6.metric("Humidity", "86%", "4%")
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            """
+            ## Column 1 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore 
+            magna aliqua. Volutpat sed cras ornare arcu dui vivamus.
+            """
+        with col2:
+            """
+            ## Column 2
+            Stuff aligned to the right
+            """
+            st.button("➡️")
+        with col3:
+            """
+            ## Column 3
+            This column was untouched by our CSS 
+            """
+            st.button("🐈")
 
     
     else:
