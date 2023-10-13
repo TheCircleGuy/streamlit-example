@@ -213,7 +213,7 @@ data = pd.DataFrame({
 })
 
 # Create a line chart for Fixed Cost, Total Cost, Target Cost, and Revenue
-st.markdown('<div style="text-align: center;">MODEL CALCULATION</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
 st.text("")
 
 st.line_chart( data=
