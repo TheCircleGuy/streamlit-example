@@ -157,9 +157,9 @@ with st.spinner("Wait A Sec, Dan!"):
         col4.metric("Profit", value =  revenue[q] - TotalCost[q] )
         st.divider()
         col1, col2, col3, col4 = st.columns(4)
-        col1.metric("")
+        col1.metric("", "")
         col2.metric("Nearest  competitor price", value = 2000)
-        col3.metric("")
+        col3.metric("", "")
         col4.metric("Diff between competitor", value = 0 )
 
         # col1, col2, col3 = st.columns(3)
