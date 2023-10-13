@@ -247,7 +247,7 @@ st.text("")
 st.text("")
 st.text("")
 
-show_last_table = st.checkbox("Show/Hide Variables Table")
+show_last_table = st.checkbox("Click to see detailed ouputs")
 
 # Show the last table only if the checkbox is checked
 if show_last_table:
