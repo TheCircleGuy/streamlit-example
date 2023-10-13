@@ -224,7 +224,7 @@ st.line_chart(data.set_index('Quantity')[[
     # 'Variable Cost',
     # 'Estimated Profit'
     
-    ]])
+    ]], x="col1", y=["col2", "col3"])
 
 
 
