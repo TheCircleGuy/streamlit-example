@@ -226,17 +226,11 @@ st.line_chart( data=
         # 'ServerCost',
         # 'Variable Cost',
         # 'Estimated Profit'
-    ]])
+    ]]
+        , x="Revenue", y="Quantity"
+     )
 
-chart_data = pd.DataFrame(
-   {
-       "price": np.random.randn(20),
-       "sales": np.random.randn(20),
-       "col3": np.random.choice(["A", "B", "C"], 20), 
-   }
-)
 
-st.line_chart(chart_data, x="price", y="sales", color="col3")
 
 
 
