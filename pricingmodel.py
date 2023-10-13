@@ -216,19 +216,45 @@ data = pd.DataFrame({
 st.markdown('<div style="text-align: center;">MODEL CALCULATION</div>', unsafe_allow_html=True)
 st.text("")
 
-st.line_chart( data=
-    data.set_index('Quantity')
-    [[
-        'Fixed Cost', 
-        'Total Cost', 
-        'Target Cost',
-        'Revenue',
-        # 'ServerCost',
-        # 'Variable Cost',
-        # 'Estimated Profit'
-    ]]
-        , x="Quantity", y="Total Cost"
-     )
+# st.line_chart( data=
+#     data.set_index('Quantity')
+#     [[
+#         'Fixed Cost', 
+#         'Total Cost', 
+#         'Target Cost',
+#         'Revenue',
+#         # 'ServerCost',
+#         # 'Variable Cost',
+#         # 'Estimated Profit'
+#     ]]
+        
+#      )
+
+
+
+# Create a line chart for Fixed Cost, Total Cost, Target Cost, and Revenue
+st.markdown('<div style="text-align: center;">MODEL CALCULATION</div>', unsafe_allow_html=True)
+st.text("")
+
+# Use st.pyplot to create a custom line chart with axis labels
+st.pyplot()
+st.line_chart(
+    data=data.set_index('Quantity')[['Fixed Cost', 'Total Cost', 'Target Cost', 'Revenue']]
+)
+
+# Set x and y-axis labels
+st.xlabel("Quantity (Sales)")
+st.ylabel("Amount")
+
+# Optionally, set a title for the chart
+st.title("Sales, Fixed Cost, Total Cost, Target Cost, and Revenue")
+
+# Render the chart
+st.pyplot()
+
+
+
+
 
 
 
