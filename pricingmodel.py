@@ -4,7 +4,7 @@ import numpy as np
 
 # Input variables
 with st.sidebar:
-    st.image('https://two.vn/sites/all/themes/vermont/img/logo.png')
+
     st.title('Inputs')
     st.header('Desired Profit Constant')
     Profit = st.number_input('', value=10000, key="a0")
@@ -151,15 +151,15 @@ with st.spinner("Wait A Sec, Dan!"):
     if BreakEvenSales is not None:
         st.write("When Sales =", BreakEvenSales, "; Revenue =", revenue[q], "; Total Cost =", TotalCost[q])
 # Target Sales, Target Revenue, Total Cost, Profit, Nearest  competitor, Diff between competitor [Speedpos] )
-        col1, col2, col3 = st.columns(4)
-            col1.metric("Target Sales", value = BreakEvenSales )
-            col2.metric("Target Revenue", value = revenue[q] )
-            col3.metric("Total Cost", value = TotalCost[q] )
-            col3.metric("Profit", value =  revenue[q] - TotalCost[q] )
-         st.divider()
-        col1, col2, col3 = st.columns(2)
-            col1.metric("Nearest  competitor price", value = 2000)
-            col2.metric("Diff between competitor", value = 0 )
+        # col1, col2, col3 = st.columns(4)
+        #     col1.metric("Target Sales", value = BreakEvenSales )
+        #     col2.metric("Target Revenue", value = revenue[q] )
+        #     col3.metric("Total Cost", value = TotalCost[q] )
+        #     col3.metric("Profit", value =  revenue[q] - TotalCost[q] )
+        #  st.divider()
+        # col1, col2, col3 = st.columns(2)
+        #     col1.metric("Nearest  competitor price", value = 2000)
+        #     col2.metric("Diff between competitor", value = 0 )
     else:
         # Find the 5 most optimal price and sales pairs to break even
         st.write("No exact Break-Even Sales found. Finding 5 most optimal price and sales pairs to break even...")
