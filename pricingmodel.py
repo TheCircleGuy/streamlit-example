@@ -20,7 +20,7 @@ with st.sidebar:
     st.subheader('Server Cost')
     ServerCost = st.number_input('', value=197, key="a5")
     st.divider()
-    st.header('Inflow')
+    st.header('Revenue Inputs')
     st.subheader('Commision perentage')
     Commision = st.number_input('', value=0.01, key="a6")
     st.subheader('Average Transaction Value')
