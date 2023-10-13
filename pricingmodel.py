@@ -5,7 +5,7 @@ import numpy as np
 # Input variables
 with st.sidebar:
     st.title('Inputs')
-    st.header('Desired Profit Constant')
+    st.header('Target Profit')
     Profit = st.number_input('', value=10000, key="a0")
     st.divider()   
     st.header('Cost Input')
