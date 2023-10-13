@@ -236,7 +236,7 @@ chart_data = pd.DataFrame(
    }
 )
 
-st.line_chart(chart_data, x="col1", y="col2", color="col3")
+st.line_chart(chart_data, x="price", y="sales", color="col3")
 
 
 
