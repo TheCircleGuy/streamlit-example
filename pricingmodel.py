@@ -232,7 +232,7 @@ chart_data = pd.DataFrame(
    {
        "price": np.random.randn(20),
        "sales": np.random.randn(20),
-       "col3": np.random.choice(["A", "B", "C"], 20),
+       "col3": np.random.choice(["A", "B", "C"], 20), 
    }
 )
 
