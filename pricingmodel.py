@@ -95,7 +95,7 @@ TargetCost = np.array(TotalCost) + np.array(ExpectedProfits)
 EstimatedProfit = np.array(revenue) - np.array(TotalCost)
 
 
-show_last_table = st.checkbox("Show/Hide Inputs Table", value=true)
+show_last_table = st.checkbox("Show/Hide Inputs Table", value=True)
 
 # Show the last table only if the checkbox is checked
 if show_last_table:
