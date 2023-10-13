@@ -95,7 +95,7 @@ TargetCost = np.array(TotalCost) + np.array(ExpectedProfits)
 EstimatedProfit = np.array(revenue) - np.array(TotalCost)
 
 
-show_last_table = st.checkbox("Show/Hide Inputs Table")
+show_last_table = st.checkbox("Show/Hide Inputs Table", value=true)
 
 # Show the last table only if the checkbox is checked
 if show_last_table:
@@ -148,7 +148,7 @@ st.text("")
 # Display loading section
 with st.spinner("Wait A Sec, Dan!"):
     if BreakEvenSales is not None:
-        st.write("When Sales =", BreakEvenSales, "; Revenue =", revenue[q], "; Total Cost =", TotalCost[q])
+        # st.write("When Sales =", BreakEvenSales, "; Revenue =", revenue[q], "; Total Cost =", TotalCost[q])
 # Target Sales, Target Revenue, Total Cost, Profit, Nearest  competitor, Diff between competitor [Speedpos] )
         col1, col2, col3, col4= st.columns(4)
         col1.metric("Target Sales", value = BreakEvenSales )
