@@ -52,24 +52,26 @@ with tab1:
       QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
       SRAnalystSalary = st.number_input('Senior Analyst Salary', value=4, key="a22")
 
-col1, col2, col3 = st.columns(3)
-    with col2:
-      st.header('Revenue Inputs')
-      st.subheader('Commision perentage')
-      Commision = st.number_input('', value=0.01, key="a6")
-      st.subheader('Average Transaction Value')
-      avgTransValue = st.number_input('', value=2, key="a7")
-      st.subheader('Average Transactions Per Store')
-      avgTransPerStore = st.number_input('', value=533, key="a11")
-      st.subheader('Medium Size Clients')
-      avgLicensePerClient = st.number_input('', value=20, key="a8")
-      st.subheader('price to be sold')
-      price = st.number_input('', value=2000, key="a9")
-      st.subheader('Sales Volume')
+st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
+coll1, coll2, coll3, coll4, coll5 = st.columns(5)
+
+    with coll1:
+    avgLicensePerClient = st.number_input('Medium Size Clients', value=20, key="a8")   
+    with coll2:
+
+     price = st.number_input('price to be sold (annual price for license)', value=2000, key="a9")
+    with coll3:
+      Commision = st.number_input('Commision perentage', value=0.01, key="a6")
+    with coll4:
+      avgTransValue = st.number_input('Average Transaction Value', value=2, key="a7")
+    with coll5:
+      avgTransPerStore = st.number_input('Average Transactions Per Store', value=533, key="a11")
+        
+  st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
       sales = st.slider(
          '',
          0, 200, (1, 30), key="a10")
-
+      
 with tab2:
    st.header("A dog")
    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
