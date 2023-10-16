@@ -3,6 +3,8 @@ import streamlit as st
 st.markdown("<h1 style='text-align: center; color: #080b54;'>Pricing Model</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h3>", unsafe_allow_html=True)
 
+
+
 with st.container():
     st.markdown("<h2 style='text-align: center; color: #0d043b;'>Inputs</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Profit</h3>", unsafe_allow_html=True)
@@ -14,30 +16,20 @@ with st.container():
     with col2:
       # st.subheader('Monthly Cost')
       MonthlyCost = st.number_input('Monthly Cost', value=31530, key="a1")  
-
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
-
-    
     col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
-      
       # st.subheader('Projects per Manager')
       ProjPerManager = st.number_input('Projects per Manager', value=4, key="a2")
       ProductOwner = st.number_input('Projects per Product Owner', value=4, key="a15")
       JRAnalyst = st.number_input('Projects per Junior Analyst ', value=4, key="a119")
-        
-     
-     
       
-        
     with col_2:
       # st.subheader('Manager Salary')
       ManagerSalary = st.number_input('Manager Salary', value=681, key="a3")
       ProductOwnerSalary = st.number_input('Product Owner Cost', value=4, key="a16")
       JRAnalystSalary = st.number_input('Junior Analyst Salary', value=4, key="a20")
         
-     
-
     with col_3:
       # st.subheader('Projects per Server')
       ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
@@ -68,9 +60,6 @@ with st.container():
     
     sales = st.slider('', 0, 200, (1, 30), key="a10")
 
-
-st.markdown("<h1 style='text-align: center; color: #080b54;'>Pricing Model</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h3>", unsafe_allow_html=True)
 
 # Create a table to display the listed variables
 table_data = {
