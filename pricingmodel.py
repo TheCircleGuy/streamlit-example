@@ -70,7 +70,7 @@ with tab1:
     
     sales = st.slider('', 0, 200, (1, 30), key="a10")
       
-with tab2:
+
      # Create a table to display the listed variables
     # table_data = {
     #     'Inputs': ['Monthly Cost', 'Number of Projects per Manager', 'Manager Salary',
@@ -122,11 +122,11 @@ with tab2:
     EstimatedProfit = np.array(revenue) - np.array(TotalCost)
 
 
-    show_last_table = st.checkbox("Show/Hide Inputs Table", value=True)
+    # show_last_table = st.checkbox("Show/Hide Inputs Table", value=True)
 
-    # Show the last table only if the checkbox is checked
-    if show_last_table:
-        st.table(table_data)
+    # # Show the last table only if the checkbox is checked
+    # if show_last_table:
+    #     st.table(table_data)
 
     # BreakEvenSales = None
     # for q in range(len(Sales)):
@@ -168,10 +168,8 @@ with tab2:
             BreakEvenSales = Sales[q]
             break
 
-    st.text("")
-    st.text("")
-    st.text("")
 
+with tab2:
     # Display loading section
     with st.spinner("Wait A Sec, Dan!"):
         if BreakEvenSales is not None:
