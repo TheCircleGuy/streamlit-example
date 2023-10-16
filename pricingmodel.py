@@ -6,24 +6,32 @@ st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size 
 tab1, tab2, tab3 = st.tabs(["Inputs", "Dog", "Owl"])
 
 with tab1:
-    st.markdown("<h3 style='text-align: center; color: #0d043b;'>Inputs</h3>", unsafe_allow_html=True)
-    col1, col2, col3 = st.columns(3)
+    st.markdown("<h2 style='text-align: center; color: #0d043b;'>Inputs</h2>", unsafe_allow_html=True)
+   
     st.header('Target Profit')
     Profit = st.number_input('', value=10000, key="a0")
     # st.title('Inputs')
-    with col1:
-      st.header('Cost Input')
-      st.subheader('Monthly Cost')
-      MonthlyCost = st.number_input('', value=31530, key="a1")
-      st.subheader('Projects per Manager')
-      ProjPerManager = st.number_input('', value=4, key="a2")
-      st.subheader('Manager Salary')
-      ManagerSalary = st.number_input('', value=681, key="a3")
-      st.subheader('Projects per Server')
-      ProjPerServer = st.number_input('', value=4, key="a4")
-      st.subheader('Server Cost')
-      ServerCost = st.number_input('', value=197, key="a5")
+    st.markdown("<h3 style='text-align: center; color: #0d043b;'>Cost Inputs</h3>", unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
     with col2:
+      # st.subheader('Monthly Cost')
+      MonthlyCost = st.number_input('Monthly Cost', value=31530, key="a1")  
+
+    st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
+    col_1, col_2, col_3, col_4 = st.columns(4)
+    with col_1:
+      
+      # st.subheader('Projects per Manager')
+      ProjPerManager = st.number_input('Projects per Manager', value=4, key="a2")
+      
+     
+      
+        
+    with col_2:
+      # st.subheader('Manager Salary')
+      ManagerSalary = st.number_input('Manager Salary', value=681, key="a3")
+        
       st.header('Revenue Inputs')
       st.subheader('Commision perentage')
       Commision = st.number_input('', value=0.01, key="a6")
@@ -39,6 +47,14 @@ with tab1:
       sales = st.slider(
          '',
          0, 200, (1, 30), key="a10")
+
+    with col_3:
+      # st.subheader('Projects per Server')
+      ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
+
+    with col_4:
+      # st.subheader('Server Cost')
+      ServerCost = st.number_input('Server Cost')', value=197, key="a5")
 
 with tab2:
    st.header("A dog")
