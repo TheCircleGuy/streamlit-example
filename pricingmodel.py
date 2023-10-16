@@ -19,18 +19,25 @@ with tab1:
       MonthlyCost = st.number_input('Monthly Cost', value=31530, key="a1")  
 
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
+
+    
     col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
       
       # st.subheader('Projects per Manager')
       ProjPerManager = st.number_input('Projects per Manager', value=4, key="a2")
-      
+      ProductOwner = st.number_input('Projects per Product Owner', value=4, key="a15")
+      JRAnalyst = st.number_input('Projects per Junior Analyst ', value=4, key="a119")
+        
+     
      
       
         
     with col_2:
       # st.subheader('Manager Salary')
       ManagerSalary = st.number_input('Manager Salary', value=681, key="a3")
+      ProductOwnerSalary = st.number_input('Product Owner Cost', value=4, key="a16")
+      JRAnalystSalary = st.number_input('Junior Analyst Salary', value=4, key="a20")
         
       st.header('Revenue Inputs')
       st.subheader('Commision perentage')
@@ -51,10 +58,12 @@ with tab1:
     with col_3:
       # st.subheader('Projects per Server')
       ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
+      QALeads = st.number_input('Projects per QA Lead', value=4, key="a17") 
 
     with col_4:
       # st.subheader('Server Cost')
       ServerCost = st.number_input('Server Cost')', value=197, key="a5")
+      QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
 
 with tab2:
    st.header("A dog")
