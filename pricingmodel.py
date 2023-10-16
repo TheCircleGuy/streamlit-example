@@ -7,8 +7,7 @@ tab1, tab2 = st.tabs(["Inputs", "Dashboard"])
 
 with tab1:
     st.markdown("<h2 style='text-align: center; color: #0d043b;'>Inputs</h2>", unsafe_allow_html=True)
-   
-     st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Profit</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Profit</h3>", unsafe_allow_html=True)
     Profit = st.number_input('', value=10000, key="a0")
     # st.title('Inputs')
     st.markdown("<h3 style='text-align: center; color: #0d043b;'>Cost Inputs</h3>", unsafe_allow_html=True)
