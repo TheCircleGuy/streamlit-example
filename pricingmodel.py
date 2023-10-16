@@ -62,7 +62,7 @@ with tab1:
 
     with col_4:
       # st.subheader('Server Cost')
-      ServerCost = st.number_input('Server Cost')', value=197, key="a5")
+      ServerCost = st.number_input('Server Cost', value=197, key="a5")
       QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
 
 with tab2:
