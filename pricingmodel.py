@@ -53,19 +53,18 @@ with tab1:
       SRAnalystSalary = st.number_input('Senior Analyst Salary', value=4, key="a22")
 
 st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
+
 coll1, coll2, coll3, coll4, coll5 = st.columns(5)
-
     with coll1:
-    avgLicensePerClient = st.number_input('Medium Size Clients', value=20, key="a8")   
+        avgLicensePerClient = st.number_input('Medium Size Clients', value=20, key="a8")   
     with coll2:
-
-     price = st.number_input('price to be sold (annual price for license)', value=2000, key="a9")
+        price = st.number_input('price to be sold (annual price for license)', value=2000, key="a9")
     with coll3:
-      Commision = st.number_input('Commision perentage', value=0.01, key="a6")
+        Commision = st.number_input('Commision perentage', value=0.01, key="a6")
     with coll4:
-      avgTransValue = st.number_input('Average Transaction Value', value=2, key="a7")
+        avgTransValue = st.number_input('Average Transaction Value', value=2, key="a7")
     with coll5:
-      avgTransPerStore = st.number_input('Average Transactions Per Store', value=533, key="a11")
+        avgTransPerStore = st.number_input('Average Transactions Per Store', value=533, key="a11")
         
   st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
       sales = st.slider(
