@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown("<h1 style='text-align: center; color: #080b54;'>Pricing Model</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h3>", unsafe_allow_html=True)
 
-
+st.container():
     st.markdown("<h2 style='text-align: center; color: #0d043b;'>Inputs</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Profit</h3>", unsafe_allow_html=True)
     Profit = st.number_input('', value=10000, key="a0")
