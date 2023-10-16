@@ -38,6 +38,21 @@ with tab1:
       ProductOwnerSalary = st.number_input('Product Owner Cost', value=4, key="a16")
       JRAnalystSalary = st.number_input('Junior Analyst Salary', value=4, key="a20")
         
+     
+
+    with col_3:
+      # st.subheader('Projects per Server')
+      ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
+      QALeads = st.number_input('Projects per QA Lead', value=4, key="a17") 
+      SRAnalyst = st.number_input('Projects per Senior Analyst', value=4, key="a21")
+
+    with col_4:
+      # st.subheader('Server Cost')
+      ServerCost = st.number_input('Server Cost', value=197, key="a5")
+      QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
+      SRAnalystSalary = st.number_input('Senior Analyst Salary', value=4, key="a22")
+    
+    with col2:
       st.header('Revenue Inputs')
       st.subheader('Commision perentage')
       Commision = st.number_input('', value=0.01, key="a6")
@@ -53,18 +68,6 @@ with tab1:
       sales = st.slider(
          '',
          0, 200, (1, 30), key="a10")
-
-    with col_3:
-      # st.subheader('Projects per Server')
-      ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
-      QALeads = st.number_input('Projects per QA Lead', value=4, key="a17") 
-      SRAnalyst = st.number_input('Projects per Senior Analyst', value=4, key="a21")
-
-    with col_4:
-      # st.subheader('Server Cost')
-      ServerCost = st.number_input('Server Cost', value=197, key="a5")
-      QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
-      SRAnalystSalary = st.number_input('Senior Analyst Salary', value=4, key="a22")
 
 with tab2:
    st.header("A dog")
