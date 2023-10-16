@@ -53,7 +53,7 @@ with st.container():
     with coll2:
         price = st.number_input('annual license price', value=2000, key="a9")
     with coll3:
-        Commision = st.number_input('Commision perentage', value=0.01, key="a6")
+        Commision = st.number_input('Commision (%)', value=1, key="a6") /100
     with coll4:
         avgTransValue = st.number_input('Average Transaction Value', value=2, key="a7")
     with coll5:
@@ -215,7 +215,8 @@ with st.spinner("Wait A Sec, Dan!"):
         # st.write("When Sales =", BreakEvenSales, "; Revenue =", revenue[q], "; Total Cost =", TotalCost[q])
 # Target Sales, Target Revenue, Total Cost, Profit, Nearest  competitor, Diff between competitor [Speedpos] )
         col1, col2, col3, col4= st.columns(4)
-        col1.metric("Target Sales ", value = BreakEvenSales )
+        with col1:
+            col1.metric("Target Sales ", value = BreakEvenSales)
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
         col4.metric("Profit", value =  revenue[q] - TotalCost[q] )
