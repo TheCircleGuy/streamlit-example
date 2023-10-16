@@ -52,9 +52,9 @@ with tab1:
       QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
       SRAnalystSalary = st.number_input('Senior Analyst Salary', value=4, key="a22")
 
-st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
 
-coll1, coll2, coll3, coll4, coll5 = st.columns(5)
+    coll1, coll2, coll3, coll4, coll5 = st.columns(5)
     with coll1:
         avgLicensePerClient = st.number_input('Medium Size Clients', value=20, key="a8")   
     with coll2:
@@ -66,7 +66,7 @@ coll1, coll2, coll3, coll4, coll5 = st.columns(5)
     with coll5:
         avgTransPerStore = st.number_input('Average Transactions Per Store', value=533, key="a11")
         
-  st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
       sales = st.slider(
          '',
          0, 200, (1, 30), key="a10")
