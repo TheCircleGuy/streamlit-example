@@ -1,9 +1,9 @@
 import streamlit as st
 
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
+tab1, tab2, tab3 = st.tabs(["Inputs", "Dog", "Owl"])
 
 with tab1:
-   st.title('Inputs')
+    st.title('Inputs')
     st.header('Target Profit')
     Profit = st.number_input('', value=10000, key="a0")
     st.divider()   
