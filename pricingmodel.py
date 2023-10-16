@@ -58,7 +58,7 @@ with tab1:
     with coll1:
         avgLicensePerClient = st.number_input('Medium Size Clients', value=20, key="a8")   
     with coll2:
-        price = st.number_input('price to be sold (annual price for license)', value=2000, key="a9")
+        price = st.number_input('annual license price', value=2000, key="a9")
     with coll3:
         Commision = st.number_input('Commision perentage', value=0.01, key="a6")
     with coll4:
