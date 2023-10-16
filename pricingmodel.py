@@ -67,9 +67,8 @@ with tab1:
         avgTransPerStore = st.number_input('Average Transactions Per Store', value=533, key="a11")
         
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
-      sales = st.slider(
-         '',
-         0, 200, (1, 30), key="a10")
+    
+    sales = st.slider('', 0, 200, (1, 30), key="a10")
       
 with tab2:
    st.header("A dog")
