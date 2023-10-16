@@ -8,7 +8,7 @@ tab1, tab2 = st.tabs(["Inputs", "Dashboard"])
 with tab1:
     st.markdown("<h2 style='text-align: center; color: #0d043b;'>Inputs</h2>", unsafe_allow_html=True)
    
-    st.header('Target Profit')
+     st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Profit</h3>", unsafe_allow_html=True)
     Profit = st.number_input('', value=10000, key="a0")
     # st.title('Inputs')
     st.markdown("<h3 style='text-align: center; color: #0d043b;'>Cost Inputs</h3>", unsafe_allow_html=True)
@@ -59,11 +59,13 @@ with tab1:
       # st.subheader('Projects per Server')
       ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
       QALeads = st.number_input('Projects per QA Lead', value=4, key="a17") 
+      SRAnalyst = st.number_input('Projects per Senior Analyst', value=4, key="a21")
 
     with col_4:
       # st.subheader('Server Cost')
       ServerCost = st.number_input('Server Cost', value=197, key="a5")
       QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
+      SRAnalystSalary = st.number_input('Senior Analyst Salary', value=4, key="a22")
 
 with tab2:
    st.header("A dog")
