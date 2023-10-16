@@ -71,7 +71,11 @@ table_data = {
               Commision, avgTransValue, avgLicensePerClient, price, f"{sales[0]} to {sales[1]}", Profit]
 }
 
+show_last_table = st.checkbox("Show/Hide Inputs Table", value=True)
 
+# Show the last table only if the checkbox is checked
+if show_last_table:
+    st.table(table_data)
 
 # Calculate the revenue, fixed cost, variable cost, and total cost for each quantity
 Sales = list(range(sales[0], (sales[1] + 1) ))
@@ -116,11 +120,7 @@ TargetCost = np.array(TotalCost) + np.array(ExpectedProfits)
 EstimatedProfit = np.array(revenue) - np.array(TotalCost)
 
 
-show_last_table = st.checkbox("Show/Hide Inputs Table", value=True)
 
-# Show the last table only if the checkbox is checked
-if show_last_table:
-    st.table(table_data)
 
 # BreakEvenSales = None
 # for q in range(len(Sales)):
