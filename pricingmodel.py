@@ -51,7 +51,8 @@ with tab1:
       ServerCost = st.number_input('Server Cost', value=197, key="a5")
       QALeadsCost = st.number_input('QA Lead Cost', value=200, key="a18") 
       SRAnalystSalary = st.number_input('Senior Analyst Salary', value=4, key="a22")
-    
+
+col1, col2, col3 = st.columns(3)
     with col2:
       st.header('Revenue Inputs')
       st.subheader('Commision perentage')
