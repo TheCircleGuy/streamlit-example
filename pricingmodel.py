@@ -89,14 +89,9 @@ revenue = [(price * avgLicensePerClient * q + Commision * avgTransValue * avgTra
 fixedCost = [MonthlyCost * 12 for q in Sales]
 ExpectedProfits = [Profit * 1 for q in Sales]
 
-# TotalManagerSalary = [
-#     ManagerSalary * q if (q // avgLicensePerClient) % ProjPerServer == 0 else ManagerSalary * (q + 1)
-#     for q in Sales
-# ]
-
 TotalManagerSalary = []
 for q in Sales:
-    if q < 5:
+    if q <= ProjPerManager:
         TotalManagerSalary.append(ManagerSalary*12)
     else:
         if (q % ProjPerManager) > 0:
@@ -104,17 +99,62 @@ for q in Sales:
         else:
             TotalManagerSalary.append((q // ProjPerManager) * ManagerSalary*12)
 
+
 TotalServerCost = []
 for q in Sales:
-    if q < 5:
+    if q <= ProjPerServer:
         TotalServerCost.append(ServerCost*12)
     else:
         if (q % ProjPerManager) > 0:
             TotalServerCost.append((q // ProjPerServer + 1) * ServerCost*12)
         else:
             TotalServerCost.append((q // ProjPerServer) * ServerCost*12)  
-            
-VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost)
+
+TotalProductOwnerCost = []
+for q in Sales:
+    if q <= ProductOwner:
+        TotalProductOwnerCost.append(ProductOwnerSalary*12)
+    else:
+        if (q % ProductOwner) > 0:
+            TotalProductOwnerCost.append((q // ProductOwner + 1) * ProductOwnerSalary*12)
+        else:
+            TotalProductOwnerCost.append((q // ProductOwner) * ProductOwnerSalary*12)  
+
+TotalQALeadsCost = []
+for q in Sales:
+    if q <= QALeads:
+        TotalQALeadsCost.append(QALeadsCost*12)
+    else:
+        if (q % QALeads) > 0:
+            TotalQALeadsCost.append((q // QALeads + 1) * QALeadsCost*12)
+        else:
+            TotalQALeadsCost.append((q // QALeads) * QALeadsCost*12)  
+
+TotalJRAnalystSalary = []
+for q in Sales:
+    if q <= JRAnalyst:
+        TotalJRAnalystSalary.append(JRAnalystSalary*12)
+    else:
+        if (q % JRAnalyst) > 0:
+            TotalJRAnalystSalary.append((q // JRAnalyst + 1) * JRAnalystSalary*12)
+        else:
+            TotalJRAnalystSalary.append((q // JRAnalyst) * JRAnalystSalary*12)  
+
+
+TotalSRAnalystSalary = []
+for q in Sales:
+    if q <= SRAnalyst:
+        TotalSRAnalystSalary.append(SRAnalystSalary*12)
+    else:
+        if (q % SRAnalyst) > 0:
+            TotalSRAnalystSalary.append((q // SRAnalyst + 1) * SRAnalystSalary*12)
+        else:
+            TotalSRAnalystSalary.append((q // SRAnalyst) * SRAnalystSalary*12)  
+
+
+
+VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost) + np.array(TotalJRAnalystSalary) + np.array(TotalSRAnalystSalary) + np.array(TotalQALeadsCost) + np.array(TotalProductOwnerCost) 
+
 
 TotalCost = np.array(fixedCost) + np.array(VariableCost)
 
@@ -175,7 +215,7 @@ with st.spinner("Wait A Sec, Dan!"):
         # st.write("When Sales =", BreakEvenSales, "; Revenue =", revenue[q], "; Total Cost =", TotalCost[q])
 # Target Sales, Target Revenue, Total Cost, Profit, Nearest  competitor, Diff between competitor [Speedpos] )
         col1, col2, col3, col4= st.columns(4)
-        col1.metric("Target Sales", value = BreakEvenSales )
+        col1.metric("Target Sales ", value = BreakEvenSales )
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
         col4.metric("Profit", value =  revenue[q] - TotalCost[q] )
