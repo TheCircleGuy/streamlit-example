@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown("<h1 style='text-align: center; color: #080b54;'>Pricing Model</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h3>", unsafe_allow_html=True)
 
-tab1, tab2, tab3 = st.tabs(["Inputs", "Dog", "Owl"])
+tab1, tab2 = st.tabs(["Inputs", "Dashboard"])
 
 with tab1:
     st.markdown("<h2 style='text-align: center; color: #0d043b;'>Inputs</h2>", unsafe_allow_html=True)
