@@ -71,8 +71,10 @@ with tab1:
     sales = st.slider('', 0, 200, (1, 30), key="a10")
       
 with tab2:
-   st.header("A dog")
-   st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+
+   left_co, cent_co,last_co = st.columns(3)
+   with cent_co:
+   st.image("https://two.vn/sites/all/themes/vermont/img/logo.png", width=200)
 
 with tab3:
    st.header("An owl")
