@@ -286,7 +286,8 @@ data = pd.DataFrame({
 })
 st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
 st.text("")
-    
+
+
 st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Total Cost + Profit Target', 'Revenue']])
 
 
