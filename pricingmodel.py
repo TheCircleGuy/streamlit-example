@@ -60,7 +60,7 @@ with st.container():
         
         price = st.number_input('Annual License Price', value=2000, key="a9")
     with coll6:
-        competitorPrice = st.number_input('Competitor's Annual License Price', value=2000, key="a21")
+        competitorPrice = st.number_input('Competitor Annual License Price', value=1600, key="a21")
         
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
     
@@ -232,7 +232,6 @@ with st.spinner("Wait A Sec, Dan!"):
         col1.metric("", "")
         col2.metric("Nearest  competitor price", value = competitorPrice)
         col3.metric("Difference between competitor", value = price-competitorPrice)
-        col3.write(diffbetweenCompetitor)
         col4.metric("", "")
        
 
