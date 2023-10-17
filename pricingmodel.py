@@ -217,6 +217,8 @@ with st.spinner("Wait A Sec, Dan!"):
         col1, col2, col3, col4= st.columns(4)
         with col1:
             col1.metric("Target Sales ", value = BreakEvenSales)
+            st.write("Revenue = (annual license price x sales x average number of stores) + (average number transactions x average transaction vale)")
+            
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
         col4.metric("Profit", value =  revenue[q] - TotalCost[q] )
@@ -277,13 +279,27 @@ data = pd.DataFrame({
 
 })
 
+kol1, kol2 = st.columns([1, 4])
 # Create a line chart for Fixed Cost, Total Cost, Target Cost, and Revenue
-st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
-st.text("")
-
-st.line_chart( data=
-    data.set_index('Quantity')
-    [[
+with kol1:
+    st.write("")
+    st.write("")
+    st.write("")
+    with stylable_container(
+        "h3",
+        """
+    h3 {
+        transform-origin: 0 0;
+        transform: rotate(90deg);
+        }""",
+    ):
+        st.subheader("HEADER")
+    
+with kol2: 
+    st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
+    st.text("")
+    st.line_chart( data=
+    data.set_index('Quantity')[[
         'Fixed Cost', 
         'Total Cost', 
         'Target Cost',
@@ -291,9 +307,7 @@ st.line_chart( data=
         # 'ServerCost',
         # 'Variable Cost',
         # 'Estimated Profit'
-    ]]
-        
-     )
+    ]])
 
 
 data = pd.DataFrame({
