@@ -282,18 +282,7 @@ data = pd.DataFrame({
 kol1, kol2 = st.columns([1, 4])
 # Create a line chart for Fixed Cost, Total Cost, Target Cost, and Revenue
 with kol1:
-    st.write("")
-    st.write("")
-    st.write("")
-    with stylable_container(
-        "h3",
-        """
-    h3 {
-        transform-origin: 0 0;
-        transform: rotate(90deg);
-        }""",
-    ):
-        st.subheader("HEADER")
+    st.markdown('<p style="writing-mode: vertical-rl; transform: rotate(180deg);">price</p>', unsafe_allow_html=True)
     
 with kol2: 
     st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
