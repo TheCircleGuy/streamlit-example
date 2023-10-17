@@ -208,7 +208,7 @@ for q in range(len(Sales)):
 st.text("")
 st.text("")
 st.text("")
-
+diffbetweenCompetitor = price - competitorPrice     
 # Display loading section
 with st.spinner("Wait A Sec, Dan!"):
     if BreakEvenSales is not None:
@@ -218,7 +218,7 @@ with st.spinner("Wait A Sec, Dan!"):
         with col1:
             col1.metric("Target Sales ", value = BreakEvenSales)
             st.text("Revenue = (annual license price x sales x average number of stores) + (average number transactions x average transaction vale)")
-diffbetweenCompetitor = price - competitorPrice            
+               
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
         col3.text("Total Cost = Fixed Cost + Variable Cost || Fixed Cost = Monthly Cost x 12 || Variable Cost = Server Cost + Salaries")
