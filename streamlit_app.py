@@ -5,5 +5,5 @@ import numpy as np
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["col1", "col2", "col3"])
 
 st.line_chart(
-   chart_data, y=["col2", "col3"], color=["#FF0000", "#0000FF"]  # Optional
+   chart_data, x="price", y=["col2", "col3"], color=["#FF0000", "#0000FF"]  # Optional
 )
