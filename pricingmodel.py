@@ -19,6 +19,7 @@ with st.container():
       # st.subheader('Monthly Cost')
       MonthlyCost = st.number_input('Monthly Cost', value=31530, key="a1")  
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
+ 
     col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
       # st.subheader('Projects per Manager')
@@ -46,23 +47,25 @@ with st.container():
 
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
 
-    coll1, coll2, coll3, coll4, coll5 = st.columns(5)
+    coll1, coll2, coll3, coll4, coll5, coll6 = st.columns(6)
     with coll1:
         avgLicensePerClient = st.number_input('Medium Size Clients', value=20, key="a8")   
     with coll2:
-        price = st.number_input('annual license price', value=2000, key="a9")
+        avgTransPerStore = st.number_input('Average Transactions Per Store', value=533, key="a11")
     with coll3:
         Commision = st.number_input('Commision (%)', value=1, key="a6") /100
     with coll4:
         avgTransValue = st.number_input('Average Transaction Value', value=2, key="a7")
     with coll5:
-        avgTransPerStore = st.number_input('Average Transactions Per Store', value=533, key="a11")
+        
+        price = st.number_input('Annual License Price', value=2000, key="a9")
+    with coll6:
+        competitorPrice = st.number_input('Competitor's Annual License Price', value=2000, key="a21")
         
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
     
     sales = st.slider('', 0, 200, (1, 30), key="a10")
 
-competitorPrice = 2000
 diffbetweenCompetitor = price - competitorPrice    
 
 # Create a table to display the listed variables
