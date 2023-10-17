@@ -228,8 +228,10 @@ with st.spinner("Wait A Sec, Dan!"):
         col1, col2, col3, col4 = st.columns(4)
         col1.metric("", "")
         col2.metric("Nearest  competitor price", value = competitorPrice)
-        col3.metric("Difference between competitor", value = (price-competitorPrice))
+        col3.metric("Difference between competitor", value = price-competitorPrice)
+        col3.write(diffbetweenCompetitor)
         col4.metric("", "")
+       
 
         # col1, col2, col3 = st.columns(3)
         # col1.metric("Target Sales", "70 °F", "1.2 °F")
