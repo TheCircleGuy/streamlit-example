@@ -274,7 +274,7 @@ data = pd.DataFrame({
     'Revenue': revenue,
     'ServerCost': TotalServerCost,
     #'Desired Profit': [Profit] * len(Sales) + TotalCost,
-    'Target Cost': TargetCost,
+    'Total Cost + Profit Target': TargetCost,
     'Variable Cost': VariableCost,
     'Estimated Profit': EstimatedProfit,
 
@@ -282,7 +282,7 @@ data = pd.DataFrame({
 st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
 st.text("")
     
-st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Target Cost', 'Revenue']])
+st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Total Cost + Profit Target', 'Revenue']])
 
 
 data = pd.DataFrame({
