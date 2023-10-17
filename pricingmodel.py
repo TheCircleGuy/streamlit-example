@@ -6,7 +6,7 @@ import numpy as np
 st.markdown("<h1 style='text-align: center; color: #080b54;'>Pricing Model</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h3>", unsafe_allow_html=True)
 
-
+competitorPrice = 2000
 
 with st.container():
     st.markdown("<h2 style='text-align: center; color: #0d043b;'>Inputs</h2>", unsafe_allow_html=True)
@@ -226,8 +226,8 @@ with st.spinner("Wait A Sec, Dan!"):
         st.divider()
         col1, col2, col3, col4 = st.columns(4)
         col1.metric("", "")
-        col2.metric("Nearest  competitor price", value = 2000)
-        col3.metric("Diff between competitor", value = 0 )
+        col2.metric("Nearest  competitor price", value = competitorPrice)
+        col3.metric("Difference between competitor", value = price - competitorPrice )
         col4.metric("", "")
 
         # col1, col2, col3 = st.columns(3)
