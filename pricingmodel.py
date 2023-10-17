@@ -283,7 +283,7 @@ st.text("")
 kol1, kol2 = st.columns([1, 20])
 # Create a line chart for Fixed Cost, Total Cost, Target Cost, and Revenue
 with kol1:
-    st.markdown('<p style="writing-mode: vertical-rl; transform: rotate(180deg);padding-top: 50px ;">Price</p>', unsafe_allow_html=True)
+    st.markdown('<p style="writing-mode: vertical-rl; transform: rotate(180deg);padding-top: 500px ;">Price</p>', unsafe_allow_html=True)
     
 with kol2: 
     st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Target Cost', 'Revenue']])
