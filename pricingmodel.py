@@ -286,16 +286,7 @@ with kol1:
     st.markdown('<p style="writing-mode: vertical-rl; transform: rotate(180deg);">price</p>', unsafe_allow_html=True)
     
 with kol2: 
-    st.line_chart( data=
-    data.set_index('Quantity')[[
-        'Fixed Cost', 
-        'Total Cost', 
-        'Target Cost',
-        'Revenue',
-        # 'ServerCost',
-        # 'Variable Cost',
-        # 'Estimated Profit'
-    ]])
+    st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Target Cost', 'Revenue']])
 
 
 data = pd.DataFrame({
