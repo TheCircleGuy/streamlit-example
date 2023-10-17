@@ -278,15 +278,14 @@ data = pd.DataFrame({
     'Estimated Profit': EstimatedProfit,
 
 })
-
+st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
+st.text("")
 kol1, kol2 = st.columns([1, 4])
 # Create a line chart for Fixed Cost, Total Cost, Target Cost, and Revenue
 with kol1:
     st.markdown('<p style="writing-mode: vertical-rl; transform: rotate(180deg);">price</p>', unsafe_allow_html=True)
     
 with kol2: 
-    st.markdown('<div style="text-align: center;">Price - Volume - Sales Mix</div>', unsafe_allow_html=True)
-    st.text("")
     st.line_chart( data=
     data.set_index('Quantity')[[
         'Fixed Cost', 
