@@ -221,7 +221,7 @@ with st.spinner("Wait A Sec, Dan!"):
             
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
-        col3.text("Total Cost = Fixed Cost + Variable Cost || Fixed Cost = Monthly Cost x 12 || Variable Cost = Server Cost + Salaries
+        col3.text("Total Cost = Fixed Cost + Variable Cost || Fixed Cost = Monthly Cost x 12 || Variable Cost = Server Cost + Salaries")
         col4.metric("Profit", value =  revenue[q] - TotalCost[q] )
         st.divider()
         col1, col2, col3, col4 = st.columns(4)
