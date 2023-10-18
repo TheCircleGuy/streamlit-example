@@ -281,17 +281,9 @@ with st.spinner("Wait A Sec, Dan!"):
         for i, pair in enumerate(optimal_pairs):
             st.write(f"Option {i + 1}: Price: {pair[0]}, Sales: {pair[1]}, Revenue: {pair[2]}, Total Cost: {pair[3]}")
 
-st.divider()       
-st.markdown("""
-<style>
-.big-font {
-    font-size:15px !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
-
+   
+st.markdown("<p style='text-align: center; font-size: 12px;'>Centered Text</p>", unsafe_allow_html=True)
+st.divider()    
 st.text("")
 st.text("")
 st.text("")
