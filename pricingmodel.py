@@ -251,16 +251,6 @@ with st.spinner("Wait A Sec, Dan!"):
         col3.metric("Difference between competitor", value = price-competitorPrice)
         col4.metric("", "")
      
-st.divider()       
-st.markdown("""
-<style>
-.big-font {
-    font-size:300px !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
         # col1, col2, col3 = st.columns(3)
         # col1.metric("Target Sales", "70 °F", "1.2 °F")
         # col2.metric("Wind", "9 mph", "-8%")
@@ -291,6 +281,16 @@ st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
         for i, pair in enumerate(optimal_pairs):
             st.write(f"Option {i + 1}: Price: {pair[0]}, Sales: {pair[1]}, Revenue: {pair[2]}, Total Cost: {pair[3]}")
 
+st.divider()       
+st.markdown("""
+<style>
+.big-font {
+    font-size:300px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
 
 st.text("")
 st.text("")
