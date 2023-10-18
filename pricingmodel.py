@@ -236,8 +236,8 @@ with st.spinner("Wait A Sec, Dan!"):
         col1, col2, col3, col4= st.columns(4)
         with col1:
             col1.metric("Target Sales ", value = BreakEvenSales)
-            st.text("Revenue = (annual license price x sales x average number of stores) + (average number transactions x average transaction vale)")
-               
+          
+        st.write("Revenue = (annual license price x sales x average number of stores) + (average number transactions x average transaction vale)")        
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
         col3.text("Total Cost = Fixed Cost + Variable Cost || Fixed Cost = Monthly Cost x 12 || Variable Cost = Server Cost + Salaries")
