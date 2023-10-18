@@ -113,47 +113,50 @@ for q in Sales:
             TotalServerCost.append((q // ProjPerServer + 1) * ServerCost*12)
         else:
             TotalServerCost.append((q // ProjPerServer) * ServerCost*12)  
+         
+if ProductOwner > 0 :
+ TotalProductOwnerCost = []
+ for q in Sales:
+     if q <= ProductOwner:
+         TotalProductOwnerCost.append(ProductOwnerSalary*12)
+     else:
+         if (q % ProductOwner) > 0:
+             TotalProductOwnerCost.append((q // ProductOwner + 1) * ProductOwnerSalary*12)
+         else:
+             TotalProductOwnerCost.append((q // ProductOwner) * ProductOwnerSalary*12)  
 
-TotalProductOwnerCost = []
-for q in Sales:
-    if q <= ProductOwner:
-        TotalProductOwnerCost.append(ProductOwnerSalary*12)
-    else:
-        if (q % ProductOwner) > 0:
-            TotalProductOwnerCost.append((q // ProductOwner + 1) * ProductOwnerSalary*12)
-        else:
-            TotalProductOwnerCost.append((q // ProductOwner) * ProductOwnerSalary*12)  
+if QALeads > 0 :
+ TotalQALeadsCost = []
+ for q in Sales:
+     if q <= QALeads:
+         TotalQALeadsCost.append(QALeadsCost*12)
+     else:
+         if (q % QALeads) > 0:
+             TotalQALeadsCost.append((q // QALeads + 1) * QALeadsCost*12)
+         else:
+             TotalQALeadsCost.append((q // QALeads) * QALeadsCost*12)  
 
-TotalQALeadsCost = []
-for q in Sales:
-    if q <= QALeads:
-        TotalQALeadsCost.append(QALeadsCost*12)
-    else:
-        if (q % QALeads) > 0:
-            TotalQALeadsCost.append((q // QALeads + 1) * QALeadsCost*12)
-        else:
-            TotalQALeadsCost.append((q // QALeads) * QALeadsCost*12)  
+if JRAnalyst> 0:
+ TotalJRAnalystSalary = []
+ for q in Sales:
+     if q <= JRAnalyst:
+         TotalJRAnalystSalary.append(JRAnalystSalary*12)
+     else:
+         if (q % JRAnalyst) > 0:
+             TotalJRAnalystSalary.append((q // JRAnalyst + 1) * JRAnalystSalary*12)
+         else:
+             TotalJRAnalystSalary.append((q // JRAnalyst) * JRAnalystSalary*12)  
 
-TotalJRAnalystSalary = []
-for q in Sales:
-    if q <= JRAnalyst:
-        TotalJRAnalystSalary.append(JRAnalystSalary*12)
-    else:
-        if (q % JRAnalyst) > 0:
-            TotalJRAnalystSalary.append((q // JRAnalyst + 1) * JRAnalystSalary*12)
-        else:
-            TotalJRAnalystSalary.append((q // JRAnalyst) * JRAnalystSalary*12)  
-
-
-TotalSRAnalystSalary = []
-for q in Sales:
-    if q <= SRAnalyst:
-        TotalSRAnalystSalary.append(SRAnalystSalary*12)
-    else:
-        if (q % SRAnalyst) > 0:
-            TotalSRAnalystSalary.append((q // SRAnalyst + 1) * SRAnalystSalary*12)
-        else:
-            TotalSRAnalystSalary.append((q // SRAnalyst) * SRAnalystSalary*12)  
+if SRAnalyst >0:
+ TotalSRAnalystSalary = []
+ for q in Sales:
+     if q <= SRAnalyst:
+         TotalSRAnalystSalary.append(SRAnalystSalary*12)
+     else:
+         if (q % SRAnalyst) > 0:
+             TotalSRAnalystSalary.append((q // SRAnalyst + 1) * SRAnalystSalary*12)
+         else:
+             TotalSRAnalystSalary.append((q // SRAnalyst) * SRAnalystSalary*12)  
 
 
 
