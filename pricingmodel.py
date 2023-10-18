@@ -282,7 +282,9 @@ with st.spinner("Wait A Sec, Dan!"):
             st.write(f"Option {i + 1}: Price: {pair[0]}, Sales: {pair[1]}, Revenue: {pair[2]}, Total Cost: {pair[3]}")
 
    
-st.markdown("<p style='text-align: center; font-size: 12px;'>Centered Text</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 12px;'>Total Cost = Fixed Cost + Variable Cost || Fixed Cost = Monthly Cost x 12 || Variable Cost = Server Cost + Salaries</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 12px;'>Revenue = (annual license price x sales x average number of stores) + (average number transactions x average transaction vale)</p>", unsafe_allow_html=True)
+
 st.divider()    
 st.text("")
 st.text("")
