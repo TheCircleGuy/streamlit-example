@@ -19,32 +19,32 @@ with st.container():
     with col2:
       # st.subheader('Monthly Cost')
       MonthlyCost = st.number_input('Monthly Cost', value=31530, key="a1")  
-    st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
+     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
  
     col_1, col_2, col_3, col_4 = st.columns(4)
-   with col_1:
+    with col_1:
     # st.subheader('Projects per Server')
-    ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
-    SRAnalyst = st.number_input('Projects per Senior Analyst', value=10, key="a21")
-    QALeads = st.number_input('Projects per QA Lead', value=0, key="a17")
+     ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
+     SRAnalyst = st.number_input('Projects per Senior Analyst', value=10, key="a21")
+     QALeads = st.number_input('Projects per QA Lead', value=0, key="a17")
 
-   with col_2:
+    with col_2:
     # st.subheader('Manager Salary')
-    ManagerSalary = st.number_input('Manager Salary', value=681, key="a3")
-    JRAnalystSalary = st.number_input('Junior Analyst Salary', value=200, key="a20")
-    ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
+     ManagerSalary = st.number_input('Manager Salary', value=681, key="a3")
+     JRAnalystSalary = st.number_input('Junior Analyst Salary', value=200, key="a20")
+     ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
 
-   with col_3:
+    with col_3:
     # st.subheader('Projects per Manager')
-    ProjPerManager = st.number_input('Projects per Manager', value=10, key="a2")
-    JRAnalyst = st.number_input('Projects per Junior Analyst', value=10, key="a119")
-    ProductOwner = st.number_input('Projects per Product Owner', value=0, key="a15")
+     ProjPerManager = st.number_input('Projects per Manager', value=10, key="a2")
+     JRAnalyst = st.number_input('Projects per Junior Analyst', value=10, key="a119")
+     ProductOwner = st.number_input('Projects per Product Owner', value=0, key="a15")
 
-   with col_4:
+    with col_4:
     # st.subheader('Server Cost')
-    ServerCost = st.number_input('Server Cost', value=197, key="a5")
-    SRAnalystSalary = st.number_input('Senior Analyst Salary', value=250, key="a22")
-    QALeadsCost = st.number_input('QA Lead Cost', value=0, key="a18")
+     ServerCost = st.number_input('Server Cost', value=197, key="a5")
+     SRAnalystSalary = st.number_input('Senior Analyst Salary', value=250, key="a22")
+     QALeadsCost = st.number_input('QA Lead Cost', value=0, key="a18")
 
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
 
