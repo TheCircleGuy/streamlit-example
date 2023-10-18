@@ -19,7 +19,7 @@ with st.container():
     with col2:
       # st.subheader('Monthly Cost')
       MonthlyCost = st.number_input('Monthly Cost', value=31530, key="a1")  
-     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
+      st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
  
     col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
