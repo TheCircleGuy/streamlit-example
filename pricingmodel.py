@@ -236,13 +236,6 @@ with st.spinner("Wait A Sec, Dan!"):
         col1, col2, col3, col4= st.columns(4)
         with col1:
             col1.metric("Target Sales ", value = BreakEvenSales)
-         st.markdown("""
-<style>
-.big-font {
-    font-size:300px !important;
-}
-</style>
-""", unsafe_allow_html=True)
 
         st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
      
@@ -257,8 +250,17 @@ with st.spinner("Wait A Sec, Dan!"):
         col2.metric("Nearest  competitor price", value = competitorPrice)
         col3.metric("Difference between competitor", value = price-competitorPrice)
         col4.metric("", "")
-       
+     
+st.divider()       
+st.markdown("""
+<style>
+.big-font {
+    font-size:300px !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
+st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
         # col1, col2, col3 = st.columns(3)
         # col1.metric("Target Sales", "70 °F", "1.2 °F")
         # col2.metric("Wind", "9 mph", "-8%")
