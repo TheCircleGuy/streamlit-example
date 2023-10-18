@@ -113,9 +113,9 @@ for q in Sales:
             TotalServerCost.append((q // ProjPerServer + 1) * ServerCost*12)
         else:
             TotalServerCost.append((q // ProjPerServer) * ServerCost*12)  
-         
+
+TotalProductOwnerCost = []
 if ProductOwner > 0 :
- TotalProductOwnerCost = []
  for q in Sales:
      if q <= ProductOwner:
          TotalProductOwnerCost.append(ProductOwnerSalary*12)
