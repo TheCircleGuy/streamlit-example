@@ -60,7 +60,7 @@ with st.container():
         
         price = st.number_input('Annual License Price', value=1500, key="a9")
     with coll6:
-        competitorPrice = st.number_input('Competitor Annual License Price', value=1600, key="a25")
+        competitorPrice = st.number_input('Competitor Annual License Price', value=1600, key="30")
         
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
     
