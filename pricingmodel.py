@@ -172,8 +172,7 @@ else:
   for q in Sales:
     TotalSRAnalystSalary.append(0)
    
-
- VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost) + np.array(TotalJRAnalystSalary) + np.array(TotalSRAnalystSalary) + np.array(TotalQALeadsCost) + np.array(TotalProductOwnerCost) 
+VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost) + np.array(TotalJRAnalystSalary) + np.array(TotalSRAnalystSalary) + np.array(TotalQALeadsCost) + np.array(TotalProductOwnerCost) 
 
 
 TotalCost = np.array(fixedCost) + np.array(VariableCost)
