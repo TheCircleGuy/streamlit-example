@@ -124,6 +124,9 @@ if ProductOwner > 0 :
              TotalProductOwnerCost.append((q // ProductOwner + 1) * ProductOwnerSalary*12)
          else:
              TotalProductOwnerCost.append((q // ProductOwner) * ProductOwnerSalary*12)  
+else:
+  for q in Sales:
+    TotalProductOwnerCost.append(0)
 
 if QALeads > 0 :
  TotalQALeadsCost = []
@@ -135,7 +138,10 @@ if QALeads > 0 :
              TotalQALeadsCost.append((q // QALeads + 1) * QALeadsCost*12)
          else:
              TotalQALeadsCost.append((q // QALeads) * QALeadsCost*12)  
-
+else:
+  for q in Sales:
+    TotalQALeadsCost.append(0)
+   
 if JRAnalyst> 0:
  TotalJRAnalystSalary = []
  for q in Sales:
@@ -146,7 +152,10 @@ if JRAnalyst> 0:
              TotalJRAnalystSalary.append((q // JRAnalyst + 1) * JRAnalystSalary*12)
          else:
              TotalJRAnalystSalary.append((q // JRAnalyst) * JRAnalystSalary*12)  
-
+else:
+  for q in Sales:
+    TotalJRAnalystSalary.append(0)
+   
 if SRAnalyst >0:
  TotalSRAnalystSalary = []
  for q in Sales:
@@ -157,10 +166,12 @@ if SRAnalyst >0:
              TotalSRAnalystSalary.append((q // SRAnalyst + 1) * SRAnalystSalary*12)
          else:
              TotalSRAnalystSalary.append((q // SRAnalyst) * SRAnalystSalary*12)  
+else:
+  for q in Sales:
+    TotalSRAnalystSalary.append(0)
+   
 
-
-
-VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost) + np.array(TotalJRAnalystSalary) + np.array(TotalSRAnalystSalary) + np.array(TotalQALeadsCost) + np.array(TotalProductOwnerCost) 
+ VariableCost = np.array(TotalManagerSalary) + np.array(TotalServerCost) + np.array(TotalJRAnalystSalary) + np.array(TotalSRAnalystSalary) + np.array(TotalQALeadsCost) + np.array(TotalProductOwnerCost) 
 
 
 TotalCost = np.array(fixedCost) + np.array(VariableCost)
