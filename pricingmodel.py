@@ -127,9 +127,9 @@ if ProductOwner > 0 :
 else:
   for q in Sales:
     TotalProductOwnerCost.append(0)
-
+   
+TotalQALeadsCost = []
 if QALeads > 0 :
- TotalQALeadsCost = []
  for q in Sales:
      if q <= QALeads:
          TotalQALeadsCost.append(QALeadsCost*12)
@@ -142,8 +142,9 @@ else:
   for q in Sales:
     TotalQALeadsCost.append(0)
    
+
+TotalJRAnalystSalary = []
 if JRAnalyst> 0:
- TotalJRAnalystSalary = []
  for q in Sales:
      if q <= JRAnalyst:
          TotalJRAnalystSalary.append(JRAnalystSalary*12)
@@ -156,8 +157,9 @@ else:
   for q in Sales:
     TotalJRAnalystSalary.append(0)
    
+
+TotalSRAnalystSalary = []
 if SRAnalyst >0:
- TotalSRAnalystSalary = []
  for q in Sales:
      if q <= SRAnalyst:
          TotalSRAnalystSalary.append(SRAnalystSalary*12)
