@@ -1,22 +1,14 @@
 import streamlit as st
+
+# Set the page configuration to "wide"
 st.set_page_config(layout="wide")
 
-# Define the URL for your logo image
-logo_url = "https://softr-prod.imgix.net/applications/98b27be8-5282-4168-9e63-2aa100dc7626/assets/50f0ea3a-c669-4683-919a-74c4bae9e283.png"
+# Add a logo in the top-left corner
+logo_path = 'https://github.com/TheCircleGuy/streamlit-example/blob/b4003f268d65134df7e3015f6090d6e79e601fbb/logo.png'
+st.sidebar.image(logo_path, use_column_width=True)
 
-# Use HTML and CSS to create the navigation bar with the logo
-navbar_html = f"""
-<div style="background-color: #08043d; padding: 10px;">
-    <img src="{logo_url}" alt="Logo" style="height: 150px; width: 150px; float: left; margin-right: 10px;">
-</div>
-"""
-
-# Render the navigation bar
-st.markdown(navbar_html, unsafe_allow_html=True)
-
-# Write the title at the center using Markdown
-st.markdown("<h1 style='text-align: center;'>Pricing Model</h1>", unsafe_allow_html=True)
+# Create a centered title using Markdown
+st.markdown("<h1 style='text-align: center;'>Cost Volume Profit Analysis</h1>", unsafe_allow_html=True)
 
 # Rest of your Streamlit app goes here
-# For example:
-st.write("This is the content of your app.")
+# You can add other content below the title, like charts, tables, or interactive elements.
