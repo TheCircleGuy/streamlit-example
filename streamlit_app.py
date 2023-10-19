@@ -10,7 +10,7 @@ logo_url = "https://softr-prod.imgix.net/applications/98b27be8-5282-4168-9e63-2a
 navbar_html = f"""
 <div style="background-color: #08043d; padding: 10px;">
     <img src="{logo_url}" alt="Logo" style="height: 150px; width: 150px; float: left; margin-right: 10px;">
-    <h1 style="color: white;">Your App Name</h1>
+    <h1 style="color: white; text-align: center;">Pricing Model</h1>
 </div> 
 """
 
