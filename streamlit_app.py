@@ -31,15 +31,7 @@ st.markdown("""
 # Create space below the title
 st.write(" ")
 
-def cook_breakfast():
-    msg = st.toast('Gathering Data...')
-    time.sleep(1)
-    msg.toast('Preping...')
-    time.sleep(1)
-    msg.toast('Ready!', icon = "🥞")
 
-if st.button('See Demo'):
-    cook_breakfast()
     
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
