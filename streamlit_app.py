@@ -84,8 +84,6 @@ chart_data = pd.DataFrame({
 })
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
-st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue'])
-
-# Display the Break-Even Number of Sales as a metric
+st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Break Even Number of Sales</h3>", unsafe_allow_html=True)
 st.metric("Sales", value=break_even_sales)
