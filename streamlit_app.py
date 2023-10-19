@@ -86,5 +86,28 @@ chart_data = pd.DataFrame({
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
 st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
-st.markdown("<h3 style='text-align: center; color: #0d043b;'>Break Even Number of Sales</h3>", unsafe_allow_html=True)
+st.markdown(""" 
+div.stButton > button:first-child {
+background-color: #00cc00;color:white;font-size:20px;height:3em;width:30em;border-radius:10px 10px 10px 10px;
+}
+.css-2trqyj:focus:not(:active) {
+border-color: #ffffff;
+box-shadow: none;
+color: #ffffff;
+background-color: #0066cc;
+}
+.css-2trqyj:focus:(:active) {
+border-color: #ffffff;
+box-shadow: none;
+color: #ffffff;
+background-color: #0066cc;
+}
+.css-2trqyj:focus:active){
+background-color: #0066cc;
+border-color: #ffffff;
+box-shadow: none;
+color: #ffffff;
+background-color: #0066cc;
+}
+""", unsafe_allow_html=True)
 
