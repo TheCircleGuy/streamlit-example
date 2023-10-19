@@ -5,7 +5,7 @@ import numpy as np
 # Set the page configuration to 'wide'
 st.set_page_config(layout="wide")
 
-# Create a title and logo in the left corner 
+# Create a title and logo in the left corner
 st.markdown("""
     <style>
         .logo {
@@ -54,7 +54,7 @@ optimal_price = (fixed_costs + target_profit) / variable_cost_per_sale
 st.markdown(f"<h3 style='text-align: center; color: #0d043b;'>Optimal Price to Achieve Target Profit: ${optimal_price:.2f}</h3>", unsafe_allow_html=True)
 
 # Calculate the "Target Price" based on total cost and target profit
-sales = list(range(quantity_range[0], quantity_range[1] + 1))
+sales = list range(quantity_range[0], quantity_range[1] + 1)
 total_cost_values = [fixed_costs + variable_cost_per_sale * s for s in sales]
 target_price_values = [total_cost + target_profit for total_cost in total_cost_values]
 
@@ -69,7 +69,7 @@ chart_data = pd.DataFrame({
 })
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
-st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price'])
+st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price']])
 
 # Footer
 st.markdown("""
