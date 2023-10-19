@@ -74,9 +74,7 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
         
-coll1, coll2, coll3 = st.columns(3)
-with col2:
-    st.metric("Break Even Number Of Sales", value=break_even_sales)
+st.markdown("<div style='text-align: center; background-color: #dcdcdc; padding: 20px; border-radius: 10px;'><h3>Break Even Number Of Sales</h3><h1 style='color: #0d043b;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
     
 # Line chart with vertical axis as price and horizontal axis as sales
 # Showing Total Cost, Target Price, and Revenue
