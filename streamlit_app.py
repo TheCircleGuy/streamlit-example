@@ -54,15 +54,19 @@ sales = list(range(quantity_range[0], quantity_range[1] + 1))
 total_cost_values = [fixed_costs + variable_cost_per_sale * s for s in sales]
 target_price_values = [total_cost + target_profit for total_cost in total_cost_values]
 
+# Calculate the revenue as the product of sales and price
+revenue_values = [sales[i] * price_to_be_sold for i in range(len(sales))]
+
 # Line chart with vertical axis as price and horizontal axis as sales
-# Showing Fixed Cost, Variable Cost, Total Cost, and Target Price
+# Showing Fixed Cost, Variable Cost, Total Cost, Target Price, and Revenue
 chart_data = pd.DataFrame({
     'Sales': sales,
     'Fixed Cost': [fixed_costs] * len(sales),
     'Variable Cost': [variable_cost_per_sale * s for s in sales],
     'Total Cost': total_cost_values,
-    'Target Price': target_price_values
+    'Target Price': target_price_values,
+    'Revenue': revenue_values
 })
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
-st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price']])
+st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price', 'Revenue']])
