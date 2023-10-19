@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-
 # Set the page configuration to 'wide'
 st.set_page_config(layout="wide")
 # Create a title and logo in the left corner
@@ -32,7 +31,6 @@ st.markdown("""
 st.write(" ")
 
 
-    
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
 
@@ -78,9 +76,5 @@ for i in range(len(sales)):
 
 
 
-
-# url='https://www.dias-advisors.com/'
-# st.markdown(
-#     f'<a href="{url}" style="display: inline-block; padding: 12px 20px; background-color: #080a33; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Connect With Dias</a>',
-#     unsafe_allow_html=True
-# )
+if st.button('Connect with Dias'):
+    webbrowser.open_new_tab("https://www.dias-advisors.com/")
