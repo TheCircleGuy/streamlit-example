@@ -38,8 +38,10 @@ fixed_costs = st.number_input("Fixed Monthly Costs", value=10000, key="fixed_cos
 variable_cost_per_sale = st.number_input("Variable Cost per Sale", value=10, key="variable_cost_per_sale")
 target_profit = st.number_input("Target Profit", value=5000, key="target_profit")
 
-# Create slider inputs for "Price to be sold" and "Quantity"
-price_range = st.slider("Price to be sold", 1000, 5000, (1000, 5000))
+# Create input field for "Price to be sold"
+price_to_be_sold = st.number_input("Price to be sold", value=1000, key="price_to_be_sold")
+
+# Create slider input for "Quantity"
 quantity_range = st.slider("Quantity", 100, 500, (100, 500))
 
 # Calculate the optimal price to achieve the target profit
