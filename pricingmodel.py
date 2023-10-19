@@ -15,11 +15,17 @@ st.markdown("""
         }
         .title {
             text-align: center;
-            font-size: 36px; /* Larger font size */
+            font-size: 36px;
         }
         .inputs-header {
             text-align: center;
             font-size: 20px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            padding: 10px 0;
         }
     </style>
     <div class="logo">
@@ -63,4 +69,20 @@ chart_data = pd.DataFrame({
 })
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
-st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price']])
+st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price'])
+
+# Footer
+st.markdown("""
+    <div class="footer">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/TheCircleGuy/streamlit-example/fbd4e7f51bfa5d98bb703b3ed81326164734da40/assets/logo.png" alt="Logo" width=60 height=60>
+        </div>
+        <a href="#">Our Story</a> |
+        <a href="#">Solutions</a> |
+        <a href="#">Team</a> |
+        <a href="#">Portfolio</a> |
+        <a href="#">Find Investors</a> |
+        <a href="#">XCHANGE</a> |
+        <a href="#">Contact</a>
+    </div>
+    """, unsafe_allow_html=True)
