@@ -31,15 +31,25 @@ st.markdown("""
 # Create space below the title
 st.write(" ")
 
-# Input fields
-st.markdown("<h3 style='text-align: center; color: #0d043b;'>Input Variables</h3>", unsafe_allow_html=True)
+# Create four columns for input fields
+col1, col2, col3, col4 = st.columns(4)
 
-fixed_costs = st.number_input("Fixed Monthly Costs", value=10000, key="fixed_costs")
-variable_cost_per_sale = st.number_input("Variable Cost per Sale", value=10, key="variable_cost_per_sale")
-target_profit = st.number_input("Target Profit", value=5000, key="target_profit")
+# Input fields in the first column
+with col1:
+    st.markdown("<h3 style='text-align: center; color: #0d043b;'>Input Variables</h3>", unsafe_allow_html=True)
+    fixed_costs = st.number_input("Fixed Monthly Costs", value=100000, key="fixed_costs")
+    
+# Input fields in the second column
+with col2:
+    variable_cost_per_sale = st.number_input("Variable Cost per Sale", value=603, key="variable_cost_per_sale")
+    
+# Input fields in the third column
+with col3:
+    target_profit = st.number_input("Target Profit", value=50000, key="target_profit")
 
-# Create input field for "Price to be sold"
-price_to_be_sold = st.number_input("Price to be sold", value=1000, key="price_to_be_sold")
+# Input fields in the fourth column
+with col4:
+    price_to_be_sold = st.number_input("Price to be sold", value=999, key="price_to_be_sold")
 
 # Create slider input for "Quantity"
 quantity_range = st.slider("Quantity", 100, 500, (100, 500))
@@ -52,21 +62,30 @@ st.markdown(f"<h3 style='text-align: center; color: #0d043b;'>Optimal Price to A
 # Calculate the "Target Price" based on total cost and target profit
 sales = list(range(quantity_range[0], quantity_range[1] + 1))
 total_cost_values = [fixed_costs + variable_cost_per_sale * s for s in sales]
-target_price_values = [total_cost + target_profit for total_cost in total_cost_values]
+target_price_values = [total cost + target_profit for total_cost in total_cost_values]
 
 # Calculate the revenue as the product of sales and price
-revenue_values = [sales[i] * price_to_be_sold for i in range(len(sales))]
+revenue_values = [sales[i] * price_to_be_sold for i in range(len(sales)]
+
+# Calculate the break-even number of sales
+break_even_sales = None
+for i in range(len(sales)):
+    if revenue_values[i] - target_price_values[i] >= 0:
+        break_even_sales = sales[i]
+        break
 
 # Line chart with vertical axis as price and horizontal axis as sales
-# Showing Fixed Cost, Variable Cost, Total Cost, Target Price, and Revenue
+# Showing Total Cost, Target Price, and Revenue
 chart_data = pd.DataFrame({
     'Sales': sales,
-    'Fixed Cost': [fixed_costs] * len(sales),
-    'Variable Cost': [variable_cost_per_sale * s for s in sales],
     'Total Cost': total_cost_values,
     'Target Price': target_price_values,
     'Revenue': revenue_values
 })
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
-st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price', 'Revenue']])
+st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue'])
+
+# Display the Break-Even Number of Sales as a metric
+st.markdown("<h3 style='text-align: center; color: #0d043b;'>Break Even Number of Sales</h3>", unsafe_allow_html=True)
+st.metric("Sales", value=break_even_sales)
