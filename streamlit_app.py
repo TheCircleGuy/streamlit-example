@@ -74,40 +74,7 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
         
-st.markdown("<div style='text-align: center; background-color: #f7f7f7; padding: 20px; border-radius: 10px;'><h3>Break Even Number Of Sales</h3><h1 style='color: #0d043b;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
-# Line chart with vertical axis as price and horizontal axis as sales
-# Showing Total Cost, Target Price, and Revenue
-chart_data = pd.DataFrame({
-    'Sales': sales,
-    'Total Cost': total_cost_values,
-    'Target Price': target_price_values,
-    'Revenue': revenue_values
-})
+ url = 'https://www.dias-advisors.com/'
 
-st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
-st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
-st.markdown(""" 
-div.stButton > button:first-child {
-background-color: #00cc00;color:white;font-size:20px;height:3em;width:30em;border-radius:10px 10px 10px 10px;
-}
-.css-2trqyj:focus:not(:active) {
-border-color: #ffffff;
-box-shadow: none;
-color: #ffffff;
-background-color: #0066cc;
-}
-.css-2trqyj:focus:(:active) {
-border-color: #ffffff;
-box-shadow: none;
-color: #ffffff;
-background-color: #0066cc;
-}
-.css-2trqyj:focus:active){
-background-color: #0066cc;
-border-color: #ffffff;
-box-shadow: none;
-color: #ffffff;
-background-color: #0066cc;
-}
-""", unsafe_allow_html=True)
-
+if st.button('Connect with Dias'):
+    webbrowser.open_new_tab(url)
