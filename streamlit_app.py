@@ -1,15 +1,27 @@
 import streamlit as st
 
-# Set the page configuration to "wide"
+# Set the page configuration to 'wide'
 st.set_page_config(layout="wide")
 
-# Add a logo in the top-left corner
-logo_path = 'https://github.com/TheCircleGuy/streamlit-example/blob/d1f324eeb17435412413f340d1cf2f22c50bee51/assets/logo.png'
-st.sidebar.image(logo_path, use_column_width=True)
+# Create a title and logo in the left corner
+st.markdown("""
+    <style>
+        .logo {
+            padding: 10px 0px;
+            margin: 0px;
+            text-align: left;
+        }
+        .title {
+            text-align: center;
+        }
+    </style>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/TheCircleGuy/streamlit-example/blob/d1f324eeb17435412413f340d1cf2f22c50bee51/assets/logo.png" alt="Logo" width=100 height=100>
+    </div>
+    <h1 class="title">Cost Volume Profit Analysis</h1>
+    """, unsafe_allow_html=True)
 
-# Create a centered title using Markdown
-st.markdown("<h1 style='text-align: center;'>Cost Volume Profit Analysis</h1>", unsafe_allow_html=True)
+# Add your content here
+st.write("Welcome to the Cost Volume Profit Analysis dashboard!")
 
-# Rest of your Streamlit app goes here
-# You can add other content below the title, like charts, tables, or interactive elements.
-   
+# You can continue adding more content and functionality to your Streamlit app.
