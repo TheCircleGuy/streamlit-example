@@ -10,8 +10,8 @@ st.markdown("""
             padding: 10px 0px;
             margin: 0px;
             text-align: left;
-            height: 5px;
-            width: 20px;
+            height: 2.15px;
+            width: 5.3px;
         }
         .title {
             text-align: center;
