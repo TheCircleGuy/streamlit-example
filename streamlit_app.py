@@ -30,7 +30,8 @@ st.markdown("""
 
 # Create space below the title
 st.write(" ")
-st.markdown("<h3 style='text-align: center; color: #0d043b;'>Input Variables</h3>", unsafe_allow_html=True)
+
+
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
 
@@ -54,9 +55,9 @@ with col4:
 quantity_range = st.slider("Quantity", 100, 500, (100, 500))
 
 # Calculate the optimal price to achieve the target profit
-optimal_price = (fixed_costs + target_profit) / variable_cost_per_sale
 
-st.markdown(f"<h3 style='text-align: center; color: #0d043b;'>Optimal Price to Achieve Target Profit: ${optimal_price:.2f}</h3>", unsafe_allow_html=True)
+
+
 
 # Calculate the "Target Price" based on total cost and target profit
 sales = list(range(quantity_range[0], quantity_range[1] + 1))
@@ -72,7 +73,11 @@ for i in range(len(sales)):
     if revenue_values[i] - target_price_values[i] >= 0:
         break_even_sales = sales[i]
         break
-st.metric("Sales", value=break_even_sales)
+        
+coll1, coll2, coll3 = st.columns(3)
+with col2:
+    st.metric("Break Even Number Of Sales", value=break_even_sales)
+    
 # Line chart with vertical axis as price and horizontal axis as sales
 # Showing Total Cost, Target Price, and Revenue
 chart_data = pd.DataFrame({
