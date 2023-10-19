@@ -40,4 +40,28 @@ target_profit = st.number_input("Target Profit", value=5000, key="target_profit"
 
 # Create slider inputs for "Price to be sold" and "Quantity"
 price_range = st.slider("Price to be sold", 1000, 5000, (1000, 5000))
-quantity_range = st.slider("Quantity", 100, 500, (100,
+quantity_range = st.slider("Quantity", 100, 500, (100, 500))
+
+# Calculate the optimal price to achieve the target profit
+optimal_price = (fixed_costs + target_profit) / variable_cost_per_sale
+
+st.markdown(f"<h3 style='text-align: center; color: #0d043b;'>Optimal Price to Achieve Target Profit: ${optimal_price:.2f}</h3>", unsafe_allow_html=True)
+
+# Line chart with vertical axis as price and horizontal axis as sales
+# Showing Fixed Cost, Variable Cost, Total Cost, and Target Price
+sales = list(range(quantity_range[0], quantity_range[1] + 1))
+price_values = [optimal_price] * len(sales)
+fixed_cost_values = [fixed_costs] * len(sales)
+variable_cost_values = [variable_cost_per_sale * s for s in sales]
+total_cost_values = [fixed_costs + variable_cost_per_sale * s for s in sales]
+
+chart_data = pd.DataFrame({
+    'Sales': sales,
+    'Price': price_values,
+    'Fixed Cost': fixed_cost_values,
+    'Variable Cost': variable_cost_values,
+    'Total Cost': total_cost_values
+})
+
+st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
+st.line_chart(chart_data.set_index('Sales')[['Price', 'Fixed Cost', 'Variable Cost', 'Total Cost']])
