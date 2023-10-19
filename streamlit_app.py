@@ -18,7 +18,7 @@ st.markdown("""
         }
     </style>
     <div class="logo">
-        <img src="https://raw.githubusercontent.com/TheCircleGuy/streamlit-example/fbd4e7f51bfa5d98bb703b3ed81326164734da40/assets/logo.png?raw=true" alt="Logo" width=100 height=100>
+        <img src="https://raw.githubusercontent.com/TheCircleGuy/streamlit-example/fbd4e7f51bfa5d98bb703b3ed81326164734da40/assets/logo.png" alt="Logo" width=100 height=100>
     </div>
     <h1 class="title">Cost Volume Profit Analysis</h1>
     """, unsafe_allow_html=True)
