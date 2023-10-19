@@ -33,10 +33,9 @@ st.write(" ")
 
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
-
+ st.markdown("<h3 style='text-align: center; color: #0d043b;'>Input Variables</h3>", unsafe_allow_html=True)
 # Input fields in the first column
 with col1:
-    st.markdown("<h3 style='text-align: center; color: #0d043b;'>Input Variables</h3>", unsafe_allow_html=True)
     fixed_costs = st.number_input("Fixed Monthly Costs", value=100000, key="fixed_costs")
     
 # Input fields in the second column
@@ -73,7 +72,7 @@ for i in range(len(sales)):
     if revenue_values[i] - target_price_values[i] >= 0:
         break_even_sales = sales[i]
         break
-
+st.metric("Sales", value=break_even_sales)
 # Line chart with vertical axis as price and horizontal axis as sales
 # Showing Total Cost, Target Price, and Revenue
 chart_data = pd.DataFrame({
@@ -86,4 +85,4 @@ chart_data = pd.DataFrame({
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
 st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Break Even Number of Sales</h3>", unsafe_allow_html=True)
-st.metric("Sales", value=break_even_sales)
+
