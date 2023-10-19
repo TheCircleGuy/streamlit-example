@@ -12,3 +12,4 @@ st.markdown("<h1 style='text-align: center;'>Cost Volume Profit Analysis</h1>", 
 
 # Rest of your Streamlit app goes here
 # You can add other content below the title, like charts, tables, or interactive elements.
+ 
