@@ -15,7 +15,7 @@ st.markdown("""
         }
         .title {
             text-align: center;
-            font-size: 24px;
+            font-size: 36px; /* Larger font size */
         }
         .inputs-header {
             text-align: center;
@@ -25,7 +25,7 @@ st.markdown("""
     <div class="logo">
         <img src="https://raw.githubusercontent.com/TheCircleGuy/streamlit-example/fbd4e7f51bfa5d98bb703b3ed81326164734da40/assets/logo.png" alt="Logo" width=100 height=100>
     </div>
-    <h1 class="title">Pricing Model</h1>
+    <h1 class="title">Cost Volume Profit Analysis</h1>
     """, unsafe_allow_html=True)
 
 # Create space below the title
@@ -47,21 +47,20 @@ optimal_price = (fixed_costs + target_profit) / variable_cost_per_sale
 
 st.markdown(f"<h3 style='text-align: center; color: #0d043b;'>Optimal Price to Achieve Target Profit: ${optimal_price:.2f}</h3>", unsafe_allow_html=True)
 
+# Calculate the "Target Price" based on total cost and target profit
+sales = list(range(quantity_range[0], quantity_range[1] + 1))
+total_cost_values = [fixed_costs + variable_cost_per_sale * s for s in sales]
+target_price_values = [total_cost + target_profit for total_cost in total_cost_values]
+
 # Line chart with vertical axis as price and horizontal axis as sales
 # Showing Fixed Cost, Variable Cost, Total Cost, and Target Price
-sales = list(range(quantity_range[0], quantity_range[1] + 1))
-price_values = [optimal_price] * len(sales)
-fixed_cost_values = [fixed_costs] * len(sales)
-variable_cost_values = [variable_cost_per_sale * s for s in sales]
-total_cost_values = [fixed_costs + variable_cost_per_sale * s for s in sales]
-
 chart_data = pd.DataFrame({
     'Sales': sales,
-    'Price': price_values,
-    'Fixed Cost': fixed_cost_values,
-    'Variable Cost': variable_cost_values,
-    'Total Cost': total_cost_values
+    'Fixed Cost': [fixed_costs] * len(sales),
+    'Variable Cost': [variable_cost_per_sale * s for s in sales],
+    'Total Cost': total_cost_values,
+    'Target Price': target_price_values
 })
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
-st.line_chart(chart_data.set_index('Sales')[['Price', 'Fixed Cost', 'Variable Cost', 'Total Cost']])
+st.line_chart(chart_data.set_index('Sales')[['Fixed Cost', 'Variable Cost', 'Total Cost', 'Target Price']])
