@@ -90,7 +90,9 @@ st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Reve
 
 URL_STRING = "https://www.dias-advisors.com/"
 
-st.markdown(
-    f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #090b30; color: white; text-align: center; text-decoration: none; font-size: 10px; border-radius: 4px;">Connect With Dias</a>',
-    unsafe_allow_html=True
-)
+coll1, coll2, coll3 = st.columns(3)
+with coll2
+    st.markdown(
+        f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #090b30; color: white; text-align: center; text-decoration: none; font-size: 25px; border-radius: 4px;">Connect With Dias</a>',
+        unsafe_allow_html=True
+    )
