@@ -23,7 +23,17 @@ st.markdown("""
     <h1 class="title">Cost Volume Profit Analysis</h1>
     """, unsafe_allow_html=True)
 
-# Add your content here
-st.write("Welcome to the Cost Volume Profit Analysis dashboard!")
 
-# You can continue adding more content and functionality to your Streamlit app.
+# Create three columns for inputs
+col1, col2, col3 = st.beta_columns(3)
+
+# Input for Fixed monthly costs
+fixed_costs = col1.number_input("Fixed monthly costs", min_value=0.0, step=1.0)
+
+# Input for Variable costs per sale
+variable_costs = col2.number_input("Variable costs per sale", min_value=0.0, step=1.0)
+
+# Input for Target profit
+target_profit = col3.number_input("Target profit", min_value=0.0, step=1.0)
+
+# You can use these input values for further calculations or
