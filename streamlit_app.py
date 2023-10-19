@@ -88,9 +88,9 @@ chart_data = pd.DataFrame({
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
 st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
 
-URL_STRING = "https://streamlit.io/"
+URL_STRING = "https://www.dias-advisors.com/"
 
 st.markdown(
-    f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>',
+    f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #090b30; color: white; text-align: center; text-decoration: none; font-size: 10px; border-radius: 4px;">Connect With Dias</a>',
     unsafe_allow_html=True
 )
