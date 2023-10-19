@@ -21,3 +21,4 @@ st.markdown(navbar_html, unsafe_allow_html=True)
 # For example:
 st.title("Welcome to Your App")
 st.write("This is the content of your app.")
+ 
