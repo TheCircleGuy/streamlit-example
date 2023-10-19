@@ -74,7 +74,7 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
         
-st.markdown("<div style='text-align: center; background-color: #dcdcdc; padding: 20px; border-radius: 10px;'><h3>Break Even Number Of Sales</h3><h1 style='color: #e8fdff;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; background-color: #fafafa; padding: 20px; border-radius: 10px;'><h3>Break Even Number Of Sales</h3><h1 style='color: #e8fdff;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
     
 # Line chart with vertical axis as price and horizontal axis as sales
 # Showing Total Cost, Target Price, and Revenue
@@ -87,4 +87,4 @@ chart_data = pd.DataFrame({
 
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
 st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
-st.markdown("<h3 style='text-align: center; color: #0d043b;'>Break Even Number of Sales</h3>", unsafe_allow_html=True)
+
