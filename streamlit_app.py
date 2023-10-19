@@ -11,7 +11,7 @@ st.markdown("""
             margin: 0px;
             text-align: left;
             height: 5px;
-            width: 15px;
+            width: 20px;
         }
         .title {
             text-align: center;
