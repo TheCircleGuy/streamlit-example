@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # Add a logo in the top-left corner
-logo_path = '/assets/logo.png'
+logo_path = 'https://github.com/TheCircleGuy/streamlit-example/blob/d1f324eeb17435412413f340d1cf2f22c50bee51/assets/logo.png'
 st.sidebar.image(logo_path, use_column_width=True)
 
 # Create a centered title using Markdown
