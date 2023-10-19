@@ -4,7 +4,7 @@ import numpy as np
 
 # Set the page configuration to 'wide'
 st.set_page_config(layout="wide")
-
+url = 'https://www.dias-advisors.com/'
 # Create a title and logo in the left corner
 st.markdown("""
     <style>
@@ -74,7 +74,7 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
         
- url = 'https://www.dias-advisors.com/'
+
 
 if st.button('Connect with Dias'):
     webbrowser.open_new_tab(url)
