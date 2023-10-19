@@ -19,5 +19,5 @@ st.markdown(navbar_html, unsafe_allow_html=True)
 
 # Rest of your Streamlit app goes here
 # For example:
-st.title("Welcome to Dias Pricing Model)
+st.title("Welcome to Dias Pricing Model")
 st.write("This is the content we want to put in.")
