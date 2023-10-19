@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from bokeh.models.widgets import Div
 
 # Set the page configuration to 'wide'
 st.set_page_config(layout="wide")
@@ -76,5 +77,9 @@ for i in range(len(sales)):
 
 
 
-if st.button('Connect with Dias'):
-    webbrowser.open_new_tab("https://www.dias-advisors.com/")
+URL_STRING = "https://www.dias-advisors.com/"
+
+st.markdown(
+    f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #080a33; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Connect With Dias</a>',
+    unsafe_allow_html=True
+)
