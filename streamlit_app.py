@@ -8,7 +8,7 @@ navbar_html = f"""
 <div style="background-color: blue; padding: 10px;">
     <img src="{logo_url}" alt="Logo" style="height: 50px; width: 50px; float: left; margin-right: 10px;">
     <h1 style="color: white;">Your App Name</h1>
-</div>
+</div> 
 """
 
 # Render the navigation bar
