@@ -87,8 +87,8 @@ for i in range(len(sales)):
 
 
 
-
-st.markdown(
-    f'<a href="{'https://www.dias-advisors.com/'}" style="display: inline-block; padding: 12px 20px; background-color: #080a33; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Connect With Dias</a>',
-    unsafe_allow_html=True
-)
+# url='https://www.dias-advisors.com/'
+# st.markdown(
+#     f'<a href="{url}" style="display: inline-block; padding: 12px 20px; background-color: #080a33; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Connect With Dias</a>',
+#     unsafe_allow_html=True
+# )
