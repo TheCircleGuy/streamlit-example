@@ -75,6 +75,6 @@ for i in range(len(sales)):
         
 
 
-url = 'https://www.dias-advisors.com/'
+
 if st.button('Connect with Dias'):
-    webbrowser.open_new_tab(url)
+    webbrowser.open_new_tab("https://www.dias-advisors.com/")
