@@ -31,7 +31,16 @@ st.markdown("""
 # Create space below the title
 st.write(" ")
 
+def cook_breakfast():
+    msg = st.toast('Gathering Data...')
+    time.sleep(1)
+    msg.toast('Preping...')
+    time.sleep(1)
+    msg.toast('Ready!', icon = "🥞")
 
+if st.button('See Demo'):
+    cook_breakfast()
+    
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
 
@@ -77,9 +86,9 @@ for i in range(len(sales)):
 
 
 
-# URL_STRING = "https://www.dias-advisors.com/"
+URL_STRING = "https://www.dias-advisors.com/"
 
-# st.markdown(
-#     f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #080a33; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Connect With Dias</a>',
-#     unsafe_allow_html=True
-# )
+st.markdown(
+    f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #080a33; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Connect With Dias</a>',
+    unsafe_allow_html=True
+)
