@@ -5,7 +5,7 @@ import numpy as np
 # Set the page configuration to 'wide'
 st.set_page_config(layout="wide")
 
-# Create a title and logo in the left corner
+# Create a title and logo in the left corner 
 st.markdown("""
     <style>
         .logo {
