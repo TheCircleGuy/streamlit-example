@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-st.write("TEST2")
-chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["col1", "col2", "col3"])
+from PIL import Image
+import json
+import streamlit.components.v1 as com
+from streamlit_lottie import st_lottie
 
-st.line_chart(
-   chart_data, x="hahahha", y=["col2", "col3"], color=["#FF0000", "#0000FF"]  # Optional
-)
+htp="https://raw.githubusercontent.com/djswoosh/Music-Recommendation-Engine-using-FMA-Dataset/main/1200px-The_Echo_Nest_logo.svg.png"
+st.image(htp, caption= 'logo', width=350)
