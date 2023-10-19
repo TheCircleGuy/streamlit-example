@@ -10,11 +10,14 @@ st.markdown("""
             padding: 10px 0px;
             margin: 0px;
             text-align: left;
-            height: 2.15px;
-            width: 5.3px;
         }
         .title {
             text-align: center;
+            font-size: 24px;
+        }
+        .inputs-header {
+            text-align: center;
+            font-size: 20px;
         }
     </style>
     <div class="logo">
@@ -23,6 +26,11 @@ st.markdown("""
     <h1 class="title">Cost Volume Profit Analysis</h1>
     """, unsafe_allow_html=True)
 
+# Add some space below the title
+st.write(" ")
+
+# Show the Inputs header in the center
+st.markdown("<div class='inputs-header'>Inputs</div>", unsafe_allow_html=True)
 
 # Create three columns for input fields
 col1, col2, col3 = st.columns(3)
@@ -40,4 +48,4 @@ with col3:
 # Add your content here
 st.write("Welcome to the Cost Volume Profit Analysis dashboard!")
 
-# You can continue adding more content and functionality to your 
+# You can continue adding more content and functionality to your app.
