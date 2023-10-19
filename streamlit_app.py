@@ -4,6 +4,7 @@ import numpy as np
 
 # Set the page configuration to 'wide'
 st.set_page_config(layout="wide")
+
 # Create a title and logo in the left corner
 st.markdown("""
     <style>
@@ -73,8 +74,17 @@ for i in range(len(sales)):
         break_even_sales = sales[i]
         break
         
+st.markdown("<div style='text-align: center; background-color: #dcdcdc; padding: 20px; border-radius: 10px;'><h3>Break Even Number Of Sales</h3><h1 style='color: #e8fdff;'>{}</h1></div>".format(break_even_sales), unsafe_allow_html=True)
+    
+# Line chart with vertical axis as price and horizontal axis as sales
+# Showing Total Cost, Target Price, and Revenue
+chart_data = pd.DataFrame({
+    'Sales': sales,
+    'Total Cost': total_cost_values,
+    'Target Price': target_price_values,
+    'Revenue': revenue_values
+})
 
-
-
-if st.button('Connect with Dias'):
-    webbrowser.open_new_tab("https://www.dias-advisors.com/")
+st.markdown("<h3 style='text-align: center; color: #0d043b;'>Price vs. Sales</h3>", unsafe_allow_html=True)
+st.line_chart(chart_data.set_index('Sales')[['Total Cost', 'Target Price', 'Revenue']])
+st.markdown("<h3 style='text-align: center; color: #0d043b;'>Break Even Number of Sales</h3>", unsafe_allow_html=True)
