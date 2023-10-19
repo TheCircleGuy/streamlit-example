@@ -30,10 +30,10 @@ st.markdown("""
 
 # Create space below the title
 st.write(" ")
-
+st.markdown("<h3 style='text-align: center; color: #0d043b;'>Input Variables</h3>", unsafe_allow_html=True)
 # Create four columns for input fields
 col1, col2, col3, col4 = st.columns(4)
- st.markdown("<h3 style='text-align: center; color: #0d043b;'>Input Variables</h3>", unsafe_allow_html=True)
+
 # Input fields in the first column
 with col1:
     fixed_costs = st.number_input("Fixed Monthly Costs", value=100000, key="fixed_costs")
