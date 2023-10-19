@@ -1,5 +1,7 @@
 import streamlit as st
-https://softr-prod.imgix.net/applications/98b27be8-5282-4168-9e63-2aa100dc7626/assets/50f0ea3a-c669-4683-919a-74c4bae9e283.png
+import streamlit as st
+st.set_page_config(layout="wide")
+
 # Define the URL for your logo image
 
 logo_url = "https://softr-prod.imgix.net/applications/98b27be8-5282-4168-9e63-2aa100dc7626/assets/50f0ea3a-c669-4683-919a-74c4bae9e283.png"
