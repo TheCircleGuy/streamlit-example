@@ -14,7 +14,7 @@ with st.container():
     Profit = st.number_input('', value=10000, key="a0")
     # st.title('Inputs')
     st.markdown("<h3 style='text-align: center; color: #0d043b;'>Cost Inputs</h3>", unsafe_allow_html=True)
-
+error
     col1, col2, col3 = st.columns(3)
     with col2:
       # st.subheader('Monthly Cost')
@@ -33,7 +33,7 @@ with st.container():
      ManagerSalary = st.number_input('Manager Salary', value=681, key="a3")
      JRAnalystSalary = st.number_input('Junior Analyst Salary', value=200, key="a20")
      ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
-
+error
     with col_3:
     # st.subheader('Projects per Manager')
      ProjPerManager = st.number_input('Projects per Manager', value=10, key="a2")
