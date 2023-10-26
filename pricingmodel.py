@@ -25,8 +25,8 @@ with st.container():
     with col_1:
     # st.subheader('Projects per Server')
      ProjPerServer = st.number_input('Projects per Server', value=4, key="a4")
-     SRAnalyst = st.number_input('Projects per Senior Analyst', value=10, key="a21")
-     QALeads = st.number_input('Projects per QA Lead', value=0, key="a17")
+     SRAnalyst = st.number_input('Projects per administrator', value=6, key="a21")
+     QALeads = st.number_input('Projects per System Admin', value=10, key="a17")
 
     with col_2:
     # st.subheader('Manager Salary')
@@ -43,8 +43,8 @@ with st.container():
     with col_4:
     # st.subheader('Server Cost')
      ServerCost = st.number_input('Server Cost', value=197, key="a5")
-     SRAnalystSalary = st.number_input('Senior Analyst Salary', value=250, key="a22")
-     QALeadsCost = st.number_input('QA Lead Cost', value=0, key="a18")
+     SRAnalystSalary = st.number_input('Administrator Salary', value=250, key="a22")
+     QALeadsCost = st.number_input('System Admin Cost', value=681, key="a18")
 
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
 
