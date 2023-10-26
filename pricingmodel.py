@@ -32,13 +32,13 @@ with st.container():
     # st.subheader('Manager Salary')
      ManagerSalary = st.number_input('Account Manager Salary', value=681, key="a3")
      JRAnalystSalary = st.number_input('Junior Analyst Salary', value=255, key="a20")
-     # ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
+     ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
 
     with col_3:
     # st.subheader('Projects per Manager')
      ProjPerManager = st.number_input('Projects per Account Manager', value=10, key="a2")
      JRAnalyst = st.number_input('Projects per Junior Analyst', value=10, key="a119")
-     # ProductOwner = st.number_input('Projects per Product Owner', value=0, key="a15")
+     ProductOwner = st.number_input('Projects per Product Owner', value=0, key="a15")
 
     with col_4:
     # st.subheader('Server Cost')
