@@ -18,7 +18,7 @@ with st.container():
     col1, col2, col3 = st.columns(3)
     with col2:
       # st.subheader('Monthly Cost')
-      MonthlyCost = st.number_input('Monthly Cost', value=31530, key="a1")  
+      MonthlyCost = st.number_input('Monthly Cost', value=32541, key="a1")  
       st.markdown("<h4 style='text-align: center; color: #0d043b;'>Variable Costs</h4>", unsafe_allow_html=True)
  
     col_1, col_2, col_3, col_4 = st.columns(4)
@@ -30,8 +30,8 @@ with st.container():
 
     with col_2:
     # st.subheader('Manager Salary')
-     ManagerSalary = st.number_input('Account Manager Salary', value=681, key="a3")
-     JRAnalystSalary = st.number_input('Junior Analyst Salary', value=255, key="a20")
+     ManagerSalary = st.number_input('Account Manager Salary', value=667, key="a3")
+     JRAnalystSalary = st.number_input('Junior Analyst Salary', value=833, key="a20")
      ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
 
     with col_3:
@@ -42,9 +42,9 @@ with st.container():
 
     with col_4:
     # st.subheader('Server Cost')
-     ServerCost = st.number_input('Server Cost', value=197, key="a5")
-     SRAnalystSalary = st.number_input('Administrator Salary', value=340, key="a22")
-     QALeadsCost = st.number_input('System Admin Cost', value=681, key="a18")
+     ServerCost = st.number_input('Server Cost', value=193, key="a5")
+     SRAnalystSalary = st.number_input('Administrator Salary', value=333, key="a22")
+     QALeadsCost = st.number_input('System Admin Cost', value=667, key="a18")
 
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
 
