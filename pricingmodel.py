@@ -30,20 +30,20 @@ with st.container():
 
     with col_2:
     # st.subheader('Manager Salary')
-     ManagerSalary = st.number_input('Manager Salary', value=681, key="a3")
-     JRAnalystSalary = st.number_input('Junior Analyst Salary', value=200, key="a20")
-     ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
+     ManagerSalary = st.number_input('Account Manager Salary', value=681, key="a3")
+     JRAnalystSalary = st.number_input('Junior Analyst Salary', value=255, key="a20")
+     # ProductOwnerSalary = st.number_input('Product Owner Cost', value=0, key="a16")
 
     with col_3:
     # st.subheader('Projects per Manager')
-     ProjPerManager = st.number_input('Projects per Manager', value=10, key="a2")
+     ProjPerManager = st.number_input('Projects per Account Manager', value=10, key="a2")
      JRAnalyst = st.number_input('Projects per Junior Analyst', value=10, key="a119")
-     ProductOwner = st.number_input('Projects per Product Owner', value=0, key="a15")
+     # ProductOwner = st.number_input('Projects per Product Owner', value=0, key="a15")
 
     with col_4:
     # st.subheader('Server Cost')
      ServerCost = st.number_input('Server Cost', value=197, key="a5")
-     SRAnalystSalary = st.number_input('Administrator Salary', value=250, key="a22")
+     SRAnalystSalary = st.number_input('Administrator Salary', value=340, key="a22")
      QALeadsCost = st.number_input('System Admin Cost', value=681, key="a18")
 
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Revenue Inputs</h4>", unsafe_allow_html=True)
