@@ -310,7 +310,7 @@ st.text("")
 
 st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Total Cost + Profit Target', 'Revenue']])
 
-
+NumberofStores = [q * avgLicensePerClient for q in Sales]
 data = pd.DataFrame({
     'Quantity': Sales,
     'Fixed Cost': fixedCost,
@@ -318,6 +318,7 @@ data = pd.DataFrame({
     'Revenue': revenue,
     'Estimated Profit': EstimatedProfit,
     'Desired Profit': [Profit] * len(Sales),
+    'Number Of Stores" : NumberofStores,
     'Variable Cost': VariableCost,
     'Total Salary': TotalManagerSalary,
     
@@ -335,11 +336,11 @@ if show_last_table:
     st.text("")
     st.table(data[[
         'Quantity',
+        'Number Of Stores",
         'Fixed Cost',
+        'Variable Cost',
         'Total Cost',
         'Revenue',
         'Estimated Profit',
-        'Desired Profit',
-        'Variable Cost',
-        'Total Salary',
+
     ]])
