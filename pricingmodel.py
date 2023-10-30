@@ -316,7 +316,7 @@ NumberofStores = [q * avgLicensePerClient for q in Sales]
 # Create a DataFrame to hold the data, including NumberofStores
 data = pd.DataFrame({
     'Quantity': Sales,
-    'NumberofStores': NumberofStores,
+    'Number of Stores': NumberofStores,
     'Fixed Cost': fixedCost,
     'Total Cost': TotalCost,
     'Revenue': revenue,
@@ -338,12 +338,10 @@ if show_last_table:
     st.text("")
     st.table(data[[
         'Quantity',
-        'NumberofStores',
+        'Number of Stores',
         'Fixed Cost',
+        'Variable Cost',
         'Total Cost',
         'Revenue',
         'Estimated Profit',
-        'Desired Profit',
-        'Variable Cost',
-        'Total Salary',
     ]])
