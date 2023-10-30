@@ -59,9 +59,9 @@ with st.container():
         avgTransValue = st.number_input('Average Transaction Value', value=2, key="a7")
     with coll5:
         
-        price = st.number_input('Annual License Price', value=1500, key="a9")
+        price = st.number_input('Price of Annual License', value=2000, key="a9")
     with coll6:
-        competitorPrice = st.number_input('Competitor Annual License Price', value=1600, key="30")
+        competitorPrice = st.number_input('Competitor Annual License Price', value=2500, key="30")
         
     st.markdown("<h4 style='text-align: center; color: #0d043b;'>Sales Volume Range</h4>", unsafe_allow_html=True)
     
@@ -238,13 +238,12 @@ with st.spinner("Wait A Sec, Dan!"):
         with col1:
             col1.metric("Target Sales ", value = BreakEvenSales)
 
-        st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
      
         # st.markdown("<h4 class="small-font; style='text-align: center; color: #0d043b;'>Total Cost = Fixed Cost + Variable Cost || Fixed Cost = Monthly Cost x 12 || Variable Cost = Server Cost + Salaries</h4>", unsafe_allow_html=True)
         # st.markdown("<h4 class="small-font"; style='text-align: center; color: #0d043b;'>Revenue = (annual license price x sales x average number of stores) + (average number transactions x average transaction vale)>", unsafe_allow_html=True)
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
-        col4.metric("Profit", value =  revenue[q] - TotalCost[q] )
+        col4.metric("Profit", value =  "{:.2f}".format(revenue[q] - TotalCost[q]) )
         st.divider()
         col1, col2, col3, col4 = st.columns(4)
         col1.metric("", "")
