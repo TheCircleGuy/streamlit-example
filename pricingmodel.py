@@ -72,9 +72,9 @@ diffbetweenCompetitor = price - competitorPrice
 # Create a table to display the listed variables
 table_data = {
     'Inputs': ['Monthly Cost', 'Number of Projects per Manager', 'Manager Salary',
-                 'Number Of Projects per SERVER', 'Server Cost', 'Commission Percentage',
-                 'Average Revenue Of License', 'Average Licenses per Client', 'Price to be sold',
-                 'Range of Licenses', 'Desired Profit'],
+                 'Number Of Projects per server', 'Server Cost', 'Commission Percentage',
+                 'Average Revenue Of License', 'Average Licenses per Client', 'price of annual license',
+                 'Range of Licenses', 'Target Profit'],
     'Value': [MonthlyCost, ProjPerManager, ManagerSalary, ProjPerServer, ServerCost,
               Commision, avgTransValue, avgLicensePerClient, price, f"{sales[0]} to {sales[1]}", Profit]
 }
