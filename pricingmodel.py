@@ -311,17 +311,18 @@ st.text("")
 st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Total Cost + Profit Target', 'Revenue']])
 
 NumberofStores = [q * avgLicensePerClient for q in Sales]
+
+# Create a DataFrame to hold the data, including NumberofStores
 data = pd.DataFrame({
     'Quantity': Sales,
+    'NumberofStores': NumberofStores,
     'Fixed Cost': fixedCost,
     'Total Cost': TotalCost,
     'Revenue': revenue,
     'Estimated Profit': EstimatedProfit,
     'Desired Profit': [Profit] * len(Sales),
-    'Number Of Stores" : NumberofStores,
     'Variable Cost': VariableCost,
     'Total Salary': TotalManagerSalary,
-    
 })
 
 st.text("")
