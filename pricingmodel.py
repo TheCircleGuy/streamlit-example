@@ -310,6 +310,7 @@ st.text("")
 
 st.line_chart( data=data.set_index('Quantity')[[ 'Fixed Cost',  'Total Cost',  'Total Cost + Profit Target', 'Revenue']])
 
+# Calculate the number of stores for each quantity of sales
 NumberofStores = [q * avgLicensePerClient for q in Sales]
 
 # Create a DataFrame to hold the data, including NumberofStores
@@ -329,7 +330,7 @@ st.text("")
 st.text("")
 st.text("")
 
-show_last_table = st.checkbox("Click to see detailed ouputs")
+show_last_table = st.checkbox("Click to see detailed outputs")
 
 # Show the last table only if the checkbox is checked
 if show_last_table:
@@ -337,11 +338,12 @@ if show_last_table:
     st.text("")
     st.table(data[[
         'Quantity',
-        'Number Of Stores",
+        'NumberofStores',
         'Fixed Cost',
-        'Variable Cost',
         'Total Cost',
         'Revenue',
         'Estimated Profit',
-
+        'Desired Profit',
+        'Variable Cost',
+        'Total Salary',
     ]])
