@@ -243,7 +243,7 @@ with st.spinner("Wait A Sec, Dan!"):
         # st.markdown("<h4 class="small-font"; style='text-align: center; color: #0d043b;'>Revenue = (annual license price x sales x average number of stores) + (average number transactions x average transaction vale)>", unsafe_allow_html=True)
         col2.metric("Target Revenue", value = revenue[q] )
         col3.metric("Total Cost", value = TotalCost[q] )
-        col4.metric("Profit", value =  "{:.2f}".format(revenue[q] - TotalCost[q]) )
+        col4.metric("Profit", value =  "{:.1f}".format(revenue[q] - TotalCost[q]) )
         st.divider()
         col1, col2, col3, col4 = st.columns(4)
         col1.metric("", "")
