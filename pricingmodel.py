@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 st.markdown("<h1 style='text-align: center; color: #080b54;'>Pricing Model</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #0d043b;'>Target Medium Size Businesses: 10 -30 stores</h3>", unsafe_allow_html=True)
@@ -246,11 +246,12 @@ with st.spinner("Wait A Sec, Dan!"):
         col3.metric("Total Cost", value = TotalCost[q] )
         col4.metric("Profit", value =  "{:.1f}".format(revenue[q] - TotalCost[q]) )
         st.divider()
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3, col4, col5 = st.columns(5)
         col1.metric("", "")
-        col2.metric("Nearest  competitor price", value = competitorPrice)
-        col3.metric("Difference between competitor", value = price-competitorPrice)
-        col4.metric("", "")
+        col2.metric("Price", value = price)
+        col3.metric("Nearest  competitor price", value = competitorPrice)
+        col4.metric("Difference between competitor", value = price-competitorPrice) 
+        col5.metric("", "")
      
         # col1, col2, col3 = st.columns(3)
         # col1.metric("Target Sales", "70 °F", "1.2 °F")
